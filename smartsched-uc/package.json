@@ -1,0 +1,12 @@
+{
+  "name": "smartsched-uc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema full-stack de gestion de horarios academicos preparado para CSP.",
+  "scripts": {
+    "start:server": "npm --prefix server start",
+    "dev:server": "npm --prefix server run dev",
+    "start:client": "npm --prefix client start",
+    "test:server": "npm --prefix server test"
+  }
+}

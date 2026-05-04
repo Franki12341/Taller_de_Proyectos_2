@@ -1,18 +1,26 @@
 const express = require("express");
 const cors = require("cors");
+const horarioRoutes = require("./routes/horario.routes");
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+
 app.use(cors());
 app.use(express.json());
 
-// Rutas
-const scheduleRoutes = require("./routes/schedule.routes");
-app.use("/api", scheduleRoutes);
-
 app.get("/", (req, res) => {
-  res.send("API SmartSched-UC funcionando 🚀");
+  res.json({
+    message: "API SmartSched-UC funcionando",
+    cspReady: true
+  });
 });
 
-app.listen(3001, () => {
-  console.log("Servidor en http://localhost:3001");
-});
+app.use("/api/horarios", horarioRoutes);
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Servidor SmartSched-UC en http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
