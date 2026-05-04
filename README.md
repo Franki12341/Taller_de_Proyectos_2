@@ -53,3 +53,114 @@ Desarrollar una plataforma web inteligente basada en técnicas de CSP que permit
 - Desarrollar una arquitectura web escalable (SPA + API REST)  
 - Garantizar la validación de prerrequisitos y créditos académicos  
 - Optimizar la distribución de horarios según preferencias del estudiante  
+
+
+# SmartSched-UC - Smart Academic Scheduler
+
+SmartSched-UC es un prototipo MERN para generar horarios academicos automaticos. El sistema modela docentes, cursos, aulas y horarios; valida restricciones academicas criticas; y expone una interfaz React conectada a una API Express/Node.js.
+
+## Estructura del repositorio
+
+```text
+Smarts_Uc/
+  smartsched-uc/
+    client/   # React
+    server/   # Node.js + Express + MongoDB/Mongoose
+    docs/     # Especificacion SDD
+```
+
+## Stack MERN
+
+- MongoDB: persistencia de Teacher, Course, Classroom y Schedule mediante Mongoose.
+- Express: API REST para consultar entidades, validar y generar horarios.
+- React: interfaz para cargar datos academicos y visualizar el horario generado.
+- Node.js: runtime del servidor y motor de generacion.
+
+El backend puede ejecutarse sin MongoDB usando el dataset semilla en memoria para demostracion local. Con `MONGODB_URI`, usa MongoDB y puede guardar resultados validos.
+
+## Modelo del problema
+
+- Teacher: codigo, nombre, especialidades y disponibilidad.
+- Course: codigo, docente, horas requeridas, matricula y tipo de aula.
+- Classroom: codigo, capacidad y tipo.
+- Schedule: sesiones generadas con curso, docente, aula, dia, inicio, fin y metricas.
+
+Relaciones principales: `Course.teacherCode -> Teacher.code`; `Schedule.items.courseCode -> Course.code`; `Schedule.items.classroomCode -> Classroom.code`.
+
+## Restricciones implementadas
+
+- Un docente no puede tener dos clases al mismo tiempo.
+- Un aula no puede estar ocupada simultaneamente.
+- No existen solapamientos validos para docente o aula.
+- Cada curso cumple exactamente sus horas asignadas.
+- Cada sesion respeta disponibilidad docente.
+- Cada aula cumple capacidad y tipo requerido.
+
+## Algoritmo
+
+El motor esta en `server/src/services/scheduler.service.js`. Genera dominios de dias y bloques de 2 horas, ordena cursos por dificultad de asignacion y evalua candidatos con una heuristica determinista:
+
+- eficiencia de capacidad de aula,
+- reduccion de espacios muertos,
+- distribucion balanceada por dia,
+- descarte automatico de conflictos.
+
+Luego ejecuta una validacion formal antes de entregar el resultado.
+
+## Endpoints principales
+
+- `GET /api/teachers`
+- `GET /api/courses`
+- `GET /api/classrooms`
+- `POST /api/schedules/generate`
+- `POST /api/schedules/validate`
+
+## Ejecucion local
+
+```bash
+cd smartsched-uc/server
+npm install
+npm run seed   # opcional, requiere MONGODB_URI
+npm start
+```
+
+```bash
+cd smartsched-uc/client
+npm install
+npm start
+```
+
+Variables opcionales:
+
+```bash
+MONGODB_URI=mongodb://127.0.0.1:27017/smartsched_uc
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+## Pruebas y evidencias
+
+Backend con Jest:
+
+```bash
+cd smartsched-uc/server
+npm.cmd test
+```
+
+Resultado verificado: 4 suites/casos del scheduler pasaron, incluyendo conflictos, restricciones y endpoint de generacion.
+
+Frontend:
+
+```bash
+cd smartsched-uc/client
+npm.cmd test -- --watchAll=false --runInBand
+```
+
+Resultado verificado: prueba React principal pasada. Build de produccion confirmado con `npm.cmd run build`.
+
+## Spec Driven Development y TDD
+
+La especificacion formal esta en `smartsched-uc/docs/SPEC.md`. El desarrollo se organizo con reglas, endpoints y flujo antes de consolidar el motor. Las pruebas Jest cubren el ciclo RED, GREEN y REFACTOR para validaciones academicas.
+
+## Google Antigravity
+
+Se documenta como soporte de IA asistida para analizar el modelado CSP, proponer validaciones y mejorar la heuristica. No es una dependencia del sistema.
