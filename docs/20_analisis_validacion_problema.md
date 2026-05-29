@@ -38,13 +38,13 @@ La optimización contribuye a este proceso porque permite reducir conflictos ant
 
 | ID | Requerimiento funcional validado | Evidencia en el MVP | Criterio de aceptación |
 |---|---|---|---|
-| RF-01 | Generar horarios académicos automáticamente. | Endpoint `POST /api/schedules/generate` y servicio `scheduler.service.js`. | El sistema devuelve sesiones ordenadas por día y hora. |
+| RF-01 | Generar horarios académicos automáticamente. | Endpoint `POST /api/smartched.uc/generate` y servicio `smartsched.uc.service.js`. | El sistema devuelve sesiones ordenadas por día y hora. |
 | RF-02 | Evitar solapamientos de horarios. | Validación `overlaps()` y rechazo de cruces entre cursos. | No deben existir dos cursos simultáneos para el estudiante. |
 | RF-03 | Validar disponibilidad docente. | Función `isTeacherAvailable()`. | Todo docente asignado debe estar disponible en la franja asignada. |
 | RF-04 | Validar disponibilidad y capacidad de aula. | Función `canUseClassroom()` y validación de capacidad. | El aula debe cubrir aforo y tipo de curso. |
 | RF-05 | Validar rango institucional de créditos. | Validación de créditos totales entre 20 y 25. | La carga académica debe quedar dentro del rango permitido. |
 | RF-06 | Visualizar resultados en GUI. | Frontend React con tabla de asignaturas, bloques y resumen del horario. | El usuario debe poder revisar cursos, sesiones, aula, docente y métricas. |
-| RF-07 | Exponer validación por API. | Endpoint `POST /api/schedules/validate`. | Un horario enviado debe devolver estado válido o lista de incidencias. |
+| RF-07 | Exponer validación por API. | Endpoint `POST /api/smartsched/validate`. | Un horario enviado debe devolver estado válido o lista de incidencias. |
 
 6. Validación de requerimientos no funcionales
 
@@ -52,7 +52,7 @@ La optimización contribuye a este proceso porque permite reducir conflictos ant
 |---|---|---|---|
 | RNF-01 | Rendimiento | Métricas de tiempo, cobertura y balance. | El motor debe responder dentro de un tiempo aceptable para el MVP. |
 | RNF-02 | Mantenibilidad | Separación en rutas, controladores, servicios, modelos y datos semilla. | Facilita pruebas, cambios y evolución del sistema. |
-| RNF-03 | Modularidad | Motor CSP aislado en `scheduler.service.js`. | Permite mejorar el algoritmo sin romper la GUI. |
+| RNF-03 | Modularidad | Motor CSP aislado en `smartsched.service.js`. | Permite mejorar el algoritmo sin romper la GUI. |
 | RNF-04 | Trazabilidad | Documentos numerados, TOC y commits semánticos propuestos. | Permite relacionar requerimientos, código y evidencias. |
 | RNF-05 | Usabilidad | GUI tipo portal académico con acciones claras. | Facilita interacción y validación visual del resultado. |
 | RNF-06 | Testeabilidad | Pruebas Jest/Supertest para validaciones y API. | Evidencia práctica TDD. |
