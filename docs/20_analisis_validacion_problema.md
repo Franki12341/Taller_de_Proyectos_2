@@ -33,8 +33,6 @@ La optimización contribuye a este proceso porque permite reducir conflictos ant
 | Estudiante | Obtener un horario sin cruces y dentro del rango de créditos. | Consulta cursos, genera proyección y valida matrícula simulada. |
 | Coordinador académico | Garantizar coherencia de horarios y recursos. | Revisa restricciones, resultados y conflictos detectados. |
 | Docente | Tener asignaciones compatibles con su disponibilidad. | Su disponibilidad alimenta el dominio del CSP. |
-| Área de planificación | Optimizar aulas, bloques y carga académica. | Usa indicadores para evaluar eficiencia y calidad. |
-| Administrador del sistema | Mantener datos, reglas y trazabilidad. | Gestiona cursos, docentes, aulas y versiones del MVP. |
 
  5. Validación de requerimientos funcionales
 
