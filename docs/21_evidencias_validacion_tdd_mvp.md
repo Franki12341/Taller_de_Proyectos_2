@@ -73,7 +73,7 @@ npm start
 Validación manual del endpoint:
 
 ```bash
-curl -X POST http://localhost:5000/api/schedules/generate \
+curl -X POST http://localhost:3000/api/schedules/generate \
   -H "Content-Type: application/json" \
   -d '{}'
 ```
