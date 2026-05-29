@@ -1,10 +1,10 @@
-# 🧪 Evidencias de validación, TDD y actualización del MVP - SmartSched-UC
+                                                 Evidencias de validación, TDD y actualización del MVP - SmartSched-UC
 
-## 1. Objetivo
+ 1. Objetivo
 
 Este documento registra las evidencias de actualización del Producto Mínimo Viable (MVP), pruebas TDD, endpoints, mejoras funcionales y trazabilidad con la consigna de análisis y validación del problema.
 
-## 2. Actualizaciones aplicadas al MVP
+ 2. Actualizaciones aplicadas al MVP
 
 | Área | Archivo | Mejora realizada | Relación con la consigna |
 |---|---|---|---|
@@ -17,7 +17,7 @@ Este documento registra las evidencias de actualización del Producto Mínimo Vi
 | Documentación | `docs/00_TOC.md` | Se sincroniza tabla de contenidos documental. | Gestión documental y repositorio. |
 | Documentación | `docs/20_analisis_validacion_problema.md` | Se consolida análisis exigido por TP2. | Entregable principal de la consigna. |
 
-## 3. Endpoints del MVP
+ 3. Endpoints del MVP
 
 | Método | Endpoint | Función | Resultado esperado |
 |---|---|---|---|
@@ -27,7 +27,7 @@ Este documento registra las evidencias de actualización del Producto Mínimo Vi
 | POST | `/api/schedules/generate` | Genera horario óptimo. | Horario válido, métricas y validación. |
 | POST | `/api/schedules/validate` | Valida horario enviado. | Estado válido o lista de incidencias. |
 
-## 4. Casos de prueba TDD
+ 4. Casos de prueba TDD
 
 | Caso | Descripción | Resultado esperado |
 |---|---|---|
@@ -38,7 +38,7 @@ Este documento registra las evidencias de actualización del Producto Mínimo Vi
 | TDD-05 | Validar rango institucional de créditos. | Rechazo si está fuera de 20 a 25 créditos. |
 | TDD-06 | Exponer motor CSP por API. | `POST /api/schedules/generate` responde `201`. |
 
-## 5. Evidencia técnica del resultado actual
+5. Evidencia técnica del resultado actual
 
 Con el dataset semilla del MVP, el motor genera un horario válido con:
 
@@ -53,7 +53,7 @@ Con el dataset semilla del MVP, el motor genera un horario válido con:
 | Eficiencia de aula | ≥ 0.90 en dataset semilla |
 | Balance | ≥ 0.50 en dataset semilla |
 
-## 6. Comandos sugeridos para validación local
+ 6. Comandos sugeridos para validación local
 
 Desde la carpeta `smartsched-uc/server`:
 
@@ -78,7 +78,7 @@ curl -X POST http://localhost:5000/api/schedules/generate \
   -d '{}'
 ```
 
-## 7. Commits semánticos sugeridos
+ 7. Commits semánticos sugeridos
 
 ```bash
 git add docs/00_TOC.md docs/20_analisis_validacion_problema.md docs/21_evidencias_validacion_tdd_mvp.md
@@ -91,7 +91,7 @@ git add README.md
 git commit -m "docs: synchronize repository toc and tp2 deliverables"
 ```
 
-## 8. Checklist de cumplimiento TP2
+ 8. Checklist de cumplimiento TP2
 
 | Requisito de la consigna | Estado | Evidencia |
 |---|---|---|
