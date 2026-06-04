@@ -25,7 +25,9 @@ Este índice sincroniza la documentación técnica del Proyecto de Fin de Asigna
 | 19 | `19_metricas_agiles.md` | Burnup, burndown, velocity y control chart. | Métricas ágiles. |
 | 20 | `20_analisis_validacion_problema.md` | Validación integral exigida en TP2. | Documento central de la nueva consigna. |
 | 21 | `21_evidencias_validacion_tdd_mvp.md` | Evidencia de MVP, TDD, endpoints y pruebas. | Actualización del MVP y repositorio. |
-| 22 | `Conclusiones.md` | Conclusiones del proyecto. | Cierre académico. |
+| 21 | `21_evidencias_validacion_tdd_mvp.md` | Evidencia de MVP, TDD, endpoints y pruebas. | Actualización del MVP y repositorio. |
+| 22 | `22_desarrollo_web_responsable_green_mern.md` | Analiza impacto ambiental del software, oportunidades de optimización, mejoras Green MERN y evidencias antes/después. | Desarrollo web responsable y sostenibilidad. |
+| 23 | `Conclusiones.md` | Conclusiones del proyecto. | Cierre académico. |
 
 ## Convención de cambios
 
