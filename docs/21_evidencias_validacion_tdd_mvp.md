@@ -2,9 +2,9 @@
 
 ## 1. Propósito del documento
 
-Este documento tiene como finalidad registrar las evidencias técnicas de validación del MVP del proyecto **SmartSched-UC**, orientado a la generación óptima de horarios académicos universitarios mediante un enfoque basado en **Constraint Satisfaction Problem (CSP)**, reglas académicas, optimización combinatoria y desarrollo web.
+Este documento tiene como finalidad registrar las evidencias técnicas de validación del MVP del proyecto **SmartSched-UC**, orientado a la generación óptima de horarios académicos universitarios mediante un enfoque basado en **Constraint Satisfaction Problem (CSP)**, reglas académicas, optimización combinatoria, desarrollo web y persistencia relacional con **PostgreSQL**.
 
-La evidencia presentada permite demostrar que el proyecto no se limita a una propuesta teórica, sino que cuenta con una implementación funcional organizada, pruebas, endpoints, mejoras de interfaz, integración progresiva con PostgreSQL y validaciones relacionadas con el problema académico identificado.
+La evidencia presentada permite demostrar que el proyecto no se limita a una propuesta teórica, sino que cuenta con una implementación funcional organizada, pruebas, endpoints, mejoras de interfaz, integración progresiva con PostgreSQL, auditoría, validación técnica y evidencias relacionadas con el problema académico identificado.
 
 El documento consolida:
 
@@ -17,6 +17,8 @@ El documento consolida:
 * datos de prueba ampliados;
 * evidencias de reglas académicas;
 * mejoras de experiencia de usuario;
+* auditoría y trazabilidad;
+* evidencias de implementación;
 * trazabilidad con GitHub;
 * criterios pendientes de validación final.
 
@@ -28,22 +30,23 @@ El MVP de SmartSched-UC fue actualizado para representar de manera más realista
 
 El alcance actual del MVP incluye:
 
-| Componente               | Estado                      | Descripción                                                                                           |
-| ------------------------ | --------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Backend Express          | Implementado                | API organizada para cursos, docentes, aulas, bloques horarios, restricciones y generación de horarios |
-| Frontend React           | Implementado                | Interfaz académica para visualización, generación y revisión de horarios                              |
-| Motor CSP / Backtracking | Implementado                | Genera combinaciones de horarios y valida restricciones                                               |
-| Datos locales mock       | Implementado                | Se mantiene como respaldo si PostgreSQL no está disponible                                            |
-| PostgreSQL               | En integración / validación | Base de datos relacional para datos académicos reales                                                 |
-| Pruebas TDD              | Implementadas               | Pruebas unitarias para reglas principales del motor                                                   |
-| Documentación            | Implementada                | Archivos técnicos en `docs/` y README                                                                 |
-| GitHub                   | Implementado                | Control de versiones y trazabilidad de cambios                                                        |
+| Componente               | Estado                        | Descripción                                                                                           |
+| ------------------------ | ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Backend Express          | Implementado                  | API organizada para cursos, docentes, aulas, bloques horarios, restricciones y generación de horarios |
+| Frontend React           | Implementado                  | Interfaz académica para visualización, generación y revisión de horarios                              |
+| Motor CSP / Backtracking | Implementado                  | Genera combinaciones de horarios y valida restricciones                                               |
+| Datos locales mock       | Implementado                  | Se mantiene como respaldo si PostgreSQL no está disponible                                            |
+| PostgreSQL               | En integración / validación   | Base de datos relacional para datos académicos reales                                                 |
+| Pruebas TDD              | Implementadas                 | Pruebas unitarias para reglas principales del motor                                                   |
+| Auditoría                | Propuesta / en implementación | Registro de acciones críticas del sistema                                                             |
+| Documentación            | Implementada                  | Archivos técnicos en `docs/` y README                                                                 |
+| GitHub                   | Implementado                  | Control de versiones y trazabilidad de cambios                                                        |
 
 ---
 
 ## 3. Justificación técnica del MVP
 
-El MVP fue diseñado para evidenciar el comportamiento central del sistema: generar horarios académicos válidos considerando restricciones interdependientes. La generación de horarios no es un problema lineal, ya que involucra múltiples entidades relacionadas: estudiantes, cursos, docentes, aulas, bloques horarios, créditos, carga académica, carga administrativa e infraestructura.
+El MVP fue diseñado para evidenciar el comportamiento central del sistema: generar horarios académicos válidos considerando restricciones interdependientes. La generación de horarios no es un problema lineal, ya que involucra múltiples entidades relacionadas: estudiantes, cursos, docentes, aulas, bloques horarios, créditos, carga académica, carga administrativa, infraestructura y reglas institucionales.
 
 Por esta razón, el MVP debe demostrar que el sistema puede:
 
@@ -55,14 +58,15 @@ Por esta razón, el MVP debe demostrar que el sistema puede:
 * mostrar métricas;
 * presentar advertencias;
 * emitir recomendaciones;
-* permitir una futura matrícula simulada;
-* almacenar o recuperar datos desde PostgreSQL.
+* permitir una matrícula simulada;
+* almacenar o recuperar datos desde PostgreSQL;
+* registrar evidencias de acciones relevantes mediante auditoría.
 
 ---
 
 ## 4. Arquitectura funcional del MVP
 
-La arquitectura actual del MVP se organiza en frontend, backend, motor de validación y capa de datos.
+La arquitectura actual del MVP se organiza en frontend, backend, motor de validación, capa de datos y auditoría.
 
 ```mermaid
 flowchart TD
@@ -76,6 +80,8 @@ flowchart TD
     D --> I[Motor CSP / Backtracking]
     I --> J[Validación de restricciones]
     J --> K[Horario generado]
+    K --> L[Registro de auditoría]
+    L --> G
     K --> B
 ```
 
@@ -99,10 +105,12 @@ Los principales componentes actualizados del proyecto son:
 | `server/src/database/schema.sql`                | Estructura de tablas PostgreSQL                                     |
 | `server/src/database/seed.sql`                  | Datos iniciales para pruebas                                        |
 | `server/src/database/indexes.sql`               | Índices para optimizar consultas                                    |
+| `server/src/database/postgres.notes.md`         | Notas técnicas de integración PostgreSQL                            |
 | `server/test/scheduler.test.js`                 | Pruebas del motor de horarios                                       |
 | `client/src/App.js`                             | Interfaz principal del sistema                                      |
 | `client/src/App.css`                            | Estilos de la interfaz                                              |
 | `client/src/App.test.js`                        | Prueba base del frontend                                            |
+| `docs/21_evidencias_validacion_tdd_mvp.md`      | Evidencias de implementación, validación, TDD y MVP                 |
 
 ---
 
@@ -176,18 +184,20 @@ La base contempla entidades como:
 * estudiantes;
 * solicitudes de cursos;
 * horarios generados;
-* detalle de horarios.
+* detalle de horarios;
+* registros de auditoría.
 
 La decisión de usar PostgreSQL se justifica porque permite:
 
-| Característica         | Aporte al proyecto                                         |
-| ---------------------- | ---------------------------------------------------------- |
-| Integridad referencial | Relaciona correctamente cursos, docentes, aulas y horarios |
-| Restricciones          | Permite validar reglas desde la base de datos              |
-| Consultas SQL          | Facilita filtros, reportes y análisis                      |
-| Índices                | Mejora rendimiento en consultas frecuentes                 |
-| Transacciones          | Evita guardar horarios incompletos                         |
-| Escalabilidad          | Permite aumentar alumnos, cursos y docentes                |
+| Característica         | Aporte al proyecto                                                      |
+| ---------------------- | ----------------------------------------------------------------------- |
+| Integridad referencial | Relaciona correctamente cursos, docentes, aulas, estudiantes y horarios |
+| Restricciones          | Permite validar reglas desde la base de datos                           |
+| Consultas SQL          | Facilita filtros, reportes y análisis                                   |
+| Índices                | Mejora rendimiento en consultas frecuentes                              |
+| Transacciones          | Evita guardar horarios incompletos                                      |
+| Escalabilidad          | Permite aumentar alumnos, cursos y docentes                             |
+| Auditoría              | Permite almacenar eventos relevantes del sistema                        |
 
 ---
 
@@ -195,20 +205,21 @@ La decisión de usar PostgreSQL se justifica porque permite:
 
 Las tablas consideradas en la integración son:
 
-| Tabla                      | Propósito                                                     |
-| -------------------------- | ------------------------------------------------------------- |
-| `courses`                  | Almacena cursos, créditos, tipo y horas requeridas            |
-| `teachers`                 | Almacena docentes, contrato, carga académica y administrativa |
-| `classrooms`               | Almacena aulas, capacidad, tipo y estado                      |
-| `time_blocks`              | Almacena bloques horarios por día y hora                      |
-| `course_teacher`           | Relaciona cursos con docentes                                 |
-| `teacher_availability`     | Registra disponibilidad docente                               |
-| `teacher_protected_blocks` | Registra bloques protegidos por carga administrativa          |
-| `constraints`              | Almacena restricciones duras y blandas                        |
-| `students`                 | Almacena alumnos de prueba                                    |
-| `student_course_requests`  | Registra solicitudes de cursos por alumno                     |
-| `schedules`                | Guarda horarios generados                                     |
-| `schedule_items`           | Guarda detalle de cada horario generado                       |
+| Tabla                      | Propósito                                                      |
+| -------------------------- | -------------------------------------------------------------- |
+| `courses`                  | Almacena cursos, créditos, tipo y horas requeridas             |
+| `teachers`                 | Almacena docentes, contrato, carga académica y administrativa  |
+| `classrooms`               | Almacena aulas, capacidad, tipo y estado                       |
+| `time_blocks`              | Almacena bloques horarios por día y hora                       |
+| `course_teacher`           | Relaciona cursos con docentes                                  |
+| `teacher_availability`     | Registra disponibilidad docente                                |
+| `teacher_protected_blocks` | Registra bloques protegidos por carga administrativa           |
+| `constraints`              | Almacena restricciones duras y blandas                         |
+| `students`                 | Almacena alumnos de prueba                                     |
+| `student_course_requests`  | Registra solicitudes de cursos por alumno                      |
+| `schedules`                | Guarda horarios generados                                      |
+| `schedule_items`           | Guarda detalle de cada horario generado                        |
+| `audit_logs`               | Registra acciones críticas, validaciones y eventos del sistema |
 
 ---
 
@@ -263,7 +274,62 @@ Resultado esperado:
 
 ---
 
-## 13. Endpoints principales del backend
+## 13. Auditoría y trazabilidad de acciones del sistema
+
+Como parte de la implementación del MVP, se considera un módulo de auditoría orientado a registrar acciones relevantes realizadas dentro del sistema SmartSched-UC. Esta funcionalidad permite fortalecer la trazabilidad del proyecto, ya que no solo se busca generar horarios académicos, sino también conservar evidencia de los cambios, validaciones y operaciones ejecutadas durante el proceso.
+
+La auditoría es importante porque en un sistema académico pueden existir modificaciones sensibles, como cambios de cursos, asignación de docentes, actualización de aulas, generación de horarios, validación de conflictos, corrección de restricciones o simulación de matrícula. Si estas acciones no quedan registradas, sería difícil identificar qué ocurrió, cuándo ocurrió y qué parte del proceso fue afectada.
+
+En SmartSched-UC, la auditoría se plantea como un mecanismo de control para registrar eventos relevantes del backend, la base de datos y el flujo de matrícula simulada. Esto permite mejorar la transparencia del sistema, facilitar revisiones posteriores y apoyar la toma de decisiones de coordinación académica.
+
+| Acción auditada               | Descripción                                                                          | Importancia                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| Generación de horario         | Registro de cada intento de generación de horario académico                          | Permite saber cuándo se ejecutó el motor de horarios                      |
+| Validación de restricciones   | Registro de conflictos detectados o reglas incumplidas                               | Permite revisar por qué una propuesta fue aceptada o rechazada            |
+| Cambios en cursos             | Registro de creación, actualización o desactivación de cursos                        | Evita pérdida de trazabilidad académica                                   |
+| Cambios en docentes           | Registro de modificaciones en carga académica, carga administrativa o disponibilidad | Permite controlar asignaciones docentes                                   |
+| Cambios en aulas              | Registro de cambios de capacidad, tipo de aula o estado de infraestructura           | Permite validar uso correcto de recursos                                  |
+| Simulación de matrícula       | Registro de cursos agregados o eliminados del resumen de matrícula                   | Permite evidenciar el flujo del estudiante                                |
+| Uso de PostgreSQL o mock data | Registro del origen de datos utilizado por el sistema                                | Permite verificar si el sistema trabajó con datos reales o respaldo local |
+| Errores de integración        | Registro de fallos en consultas o conexión con PostgreSQL                            | Facilita mantenimiento y corrección técnica                               |
+
+Para una siguiente versión del sistema, se propone implementar una tabla específica de auditoría en PostgreSQL llamada `audit_logs`, donde se almacenen eventos importantes del sistema.
+
+```sql
+CREATE TABLE IF NOT EXISTS audit_logs (
+    id SERIAL PRIMARY KEY,
+    action VARCHAR(100) NOT NULL,
+    entity VARCHAR(100),
+    entity_id VARCHAR(50),
+    description TEXT,
+    user_role VARCHAR(50),
+    source VARCHAR(50),
+    metadata JSONB,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+Ejemplos de eventos que podrían almacenarse:
+
+```sql
+INSERT INTO audit_logs (action, entity, description, user_role, source)
+VALUES
+('GENERATE_SCHEDULE', 'schedules', 'Se generó una propuesta de horario académico', 'COORDINATOR', 'backend');
+
+INSERT INTO audit_logs (action, entity, description, user_role, source)
+VALUES
+('VALIDATE_CONSTRAINTS', 'constraints', 'Se validaron restricciones duras y blandas del horario', 'SYSTEM', 'scheduler');
+
+INSERT INTO audit_logs (action, entity, description, user_role, source)
+VALUES
+('SIMULATE_ENROLLMENT', 'students', 'El estudiante agregó cursos al resumen de matrícula simulada', 'STUDENT', 'frontend');
+```
+
+La auditoría también contribuye al enfoque de desarrollo web responsable, porque reduce reprocesos y facilita la identificación de errores. Si se detecta una inconsistencia en un horario, el equipo puede revisar los eventos registrados en lugar de repetir manualmente todo el proceso. Esto mejora la mantenibilidad, la transparencia y la eficiencia operativa del sistema.
+
+---
+
+## 14. Endpoints principales del backend
 
 Los endpoints principales del MVP son:
 
@@ -275,13 +341,13 @@ Los endpoints principales del MVP son:
 | GET    | `/api/classrooms`         | Lista aulas                                 |
 | GET    | `/api/time-blocks`        | Lista bloques horarios                      |
 | GET    | `/api/constraints`        | Lista restricciones                         |
+| GET    | `/api/debug/schema`       | Revisa tablas y columnas detectadas         |
 | POST   | `/api/schedules/generate` | Genera horario académico                    |
 | POST   | `/api/schedules/validate` | Valida horario enviado                      |
-| GET    | `/api/debug/schema`       | Revisa tablas y columnas detectadas         |
 
 ---
 
-## 14. Evidencia esperada del endpoint de salud
+## 15. Evidencia esperada del endpoint de salud
 
 Para validar si el sistema está usando PostgreSQL, se debe abrir:
 
@@ -320,7 +386,7 @@ usingFallback: false
 
 ---
 
-## 15. Evidencia de fallback a mock data
+## 16. Evidencia de fallback a mock data
 
 El sistema mantiene un mecanismo de respaldo mediante mock data local. Esto permite que la aplicación continúe funcionando aunque PostgreSQL no esté disponible.
 
@@ -335,7 +401,7 @@ Sin embargo, para la entrega final se debe evidenciar que PostgreSQL está funci
 
 ---
 
-## 16. Validación del backend
+## 17. Validación del backend
 
 Para validar el backend, se ejecutan los siguientes comandos desde:
 
@@ -382,7 +448,7 @@ Servidor SmartSched-UC en http://localhost:5000
 
 ---
 
-## 17. Validación del frontend
+## 18. Validación del frontend
 
 Para validar el frontend, se ejecutan los siguientes comandos desde:
 
@@ -423,7 +489,7 @@ Local: http://localhost:3000
 
 ---
 
-## 18. Pruebas TDD del motor de horarios
+## 19. Pruebas TDD del motor de horarios
 
 Las pruebas TDD permiten validar que las reglas principales del sistema funcionen correctamente antes de considerar estable el MVP.
 
@@ -442,7 +508,7 @@ Casos de prueba considerados:
 
 ---
 
-## 19. Resultado de pruebas registrado
+## 20. Resultado de pruebas registrado
 
 Evidencia esperada del backend:
 
@@ -466,7 +532,7 @@ Si alguna prueba falla, se debe registrar el error, corregirlo y volver a ejecut
 
 ---
 
-## 20. Validación de generación de horario
+## 21. Validación de generación de horario
 
 Para validar la generación de horarios se utiliza:
 
@@ -508,7 +574,7 @@ Ejemplo de salida esperada:
 
 ---
 
-## 21. Validación de interfaz de usuario
+## 22. Validación de interfaz de usuario
 
 La interfaz fue revisada para mejorar su usabilidad. El objetivo es que no parezca únicamente un tablero técnico, sino una vista de matrícula más compacta y cercana a un sistema universitario real.
 
@@ -526,7 +592,7 @@ Esta organización permite separar la experiencia del estudiante de la informaci
 
 ---
 
-## 22. Flujo de matrícula simulado
+## 23. Flujo de matrícula simulado
 
 El flujo ideal del MVP es:
 
@@ -547,7 +613,7 @@ Este flujo busca reducir la complejidad visual y facilitar que el estudiante sep
 
 ---
 
-## 23. Evidencias de experiencia de usuario
+## 24. Evidencias de experiencia de usuario
 
 Aspectos evaluados en la interfaz:
 
@@ -563,7 +629,7 @@ Aspectos evaluados en la interfaz:
 
 ---
 
-## 24. Evidencia de datos reales vs mock data
+## 25. Evidencia de datos reales vs mock data
 
 Para confirmar si el sistema usa PostgreSQL o mock data se debe revisar:
 
@@ -590,7 +656,7 @@ Si aparece la alerta anterior, significa que la base está conectada, pero algun
 
 ---
 
-## 25. Validación del esquema PostgreSQL
+## 26. Validación del esquema PostgreSQL
 
 Para revisar columnas y tablas existentes, se puede ejecutar:
 
@@ -620,7 +686,37 @@ Esta evidencia permite confirmar si el backend y la base de datos están alinead
 
 ---
 
-## 26. Validación de rendimiento y sostenibilidad
+## 27. Validación y evidencias de implementación
+
+Para sustentar que el MVP fue realmente implementado y no solo descrito en documentación, se deben registrar evidencias verificables del comportamiento del sistema.
+
+| Evidencia                       | Qué demuestra                                      | Cómo obtenerla                                                |
+| ------------------------------- | -------------------------------------------------- | ------------------------------------------------------------- |
+| Servidor iniciado correctamente | El backend Express funciona                        | Captura de `npm start`                                        |
+| Conexión a PostgreSQL           | La base de datos está activa                       | Captura de consola o `/api/health`                            |
+| Endpoints académicos activos    | La API responde datos reales                       | Captura de `/api/courses`, `/api/teachers`, `/api/classrooms` |
+| Datos ampliados                 | La base contiene 60 alumnos y más datos académicos | Captura de conteo en pgAdmin                                  |
+| Pruebas backend                 | El motor de horarios tiene pruebas                 | Captura de `npm test`                                         |
+| Pruebas frontend                | La interfaz compila y responde                     | Captura de `npm test -- --watchAll=false`                     |
+| Build frontend                  | El cliente puede compilarse para producción        | Captura de `npm run build`                                    |
+| Interfaz de matrícula           | El estudiante puede revisar asignaturas y horario  | Captura de la pantalla de matrícula                           |
+| Auditoría propuesta             | El sistema contempla trazabilidad de acciones      | Captura o sección de documentación                            |
+| GitHub actualizado              | Los cambios fueron versionados                     | Captura de commits recientes                                  |
+
+Además, se considera importante registrar una comparación entre el estado anterior y el estado actualizado:
+
+| Aspecto          | Antes                 | Después                                                    |
+| ---------------- | --------------------- | ---------------------------------------------------------- |
+| Datos académicos | Mock data básico      | PostgreSQL con datos ampliados y fallback local            |
+| Interfaz         | Vista técnica extensa | Vista de matrícula compacta con coordinación separada      |
+| Validación       | Reglas básicas        | Reglas académicas, docentes, aulas e infraestructura       |
+| Evidencias       | Documentación parcial | Pruebas, endpoints, datos, capturas y trazabilidad         |
+| Auditoría        | No considerada        | Propuesta de `audit_logs` para eventos críticos            |
+| Repositorio      | Cambios generales     | Commits descriptivos por documentación, backend y frontend |
+
+---
+
+## 28. Validación de rendimiento y sostenibilidad
 
 El MVP también considera criterios de eficiencia y sostenibilidad del software. Las mejoras aplicadas o propuestas incluyen:
 
@@ -633,10 +729,11 @@ El MVP también considera criterios de eficiencia y sostenibilidad del software.
 | Separación backend/frontend      | Mejora mantenibilidad                            |
 | Interfaz compacta                | Reduce tiempo de uso del estudiante              |
 | Uso de datos reales de prueba    | Permite validar comportamiento con mayor volumen |
+| Auditoría                        | Reduce reprocesos y facilita mantenimiento       |
 
 ---
 
-## 27. Evidencias requeridas para la entrega
+## 29. Evidencias requeridas para la entrega
 
 Para fortalecer la entrega, se recomienda adjuntar capturas de:
 
@@ -652,10 +749,12 @@ Para fortalecer la entrega, se recomienda adjuntar capturas de:
 | Captura 8  | pgAdmin mostrando 60 alumnos                                    |
 | Captura 9  | Interfaz de matrícula compacta                                  |
 | Captura 10 | GitHub con commits recientes                                    |
+| Captura 11 | Evidencia de auditoría propuesta o tabla `audit_logs`           |
+| Captura 12 | Endpoint `/api/debug/schema` o consulta de esquema PostgreSQL   |
 
 ---
 
-## 28. Trazabilidad con GitHub
+## 30. Trazabilidad con GitHub
 
 Los cambios deben registrarse con commits descriptivos para evidenciar control de versiones.
 
@@ -663,13 +762,13 @@ Commits sugeridos:
 
 ```bash
 git add docs/21_evidencias_validacion_tdd_mvp.md
-git commit -m "docs: improve MVP validation and TDD evidence"
+git commit -m "docs: improve MVP validation evidence and auditability"
 
 git add smartsched-uc/server
 git commit -m "feat: align backend with PostgreSQL academic data"
 
 git add smartsched-uc/client
-git commit -m "feat: improve enrollment interface usability"
+git commit -m "feat: improve compact enrollment interface usability"
 
 git add docs README.md
 git commit -m "docs: update evidence and repository documentation"
@@ -679,27 +778,29 @@ git push origin main
 
 ---
 
-## 29. Checklist de cumplimiento
+## 31. Checklist de cumplimiento
 
-| Criterio                                | Estado                        |
-| --------------------------------------- | ----------------------------- |
-| Requerimientos funcionales validados    | Cumplido                      |
-| Requerimientos no funcionales validados | Cumplido                      |
-| Restricciones académicas identificadas  | Cumplido                      |
-| Actores y necesidades considerados      | Cumplido                      |
-| MVP actualizado                         | Cumplido                      |
-| Backend organizado                      | Cumplido                      |
-| Frontend actualizado                    | Cumplido                      |
-| TDD aplicado                            | Cumplido                      |
-| PostgreSQL integrado                    | En validación final           |
-| Datos ampliados a 60 alumnos            | Cumplido                      |
-| Documentación actualizada               | Cumplido                      |
-| GitHub con commits descriptivos         | Pendiente de push final       |
-| Evidencias capturadas                   | Pendiente de capturas finales |
+| Criterio                                  | Estado                        |
+| ----------------------------------------- | ----------------------------- |
+| Requerimientos funcionales validados      | Cumplido                      |
+| Requerimientos no funcionales validados   | Cumplido                      |
+| Restricciones académicas identificadas    | Cumplido                      |
+| Actores y necesidades considerados        | Cumplido                      |
+| MVP actualizado                           | Cumplido                      |
+| Backend organizado                        | Cumplido                      |
+| Frontend actualizado                      | Cumplido                      |
+| TDD aplicado                              | Cumplido                      |
+| PostgreSQL integrado                      | En validación final           |
+| Datos ampliados a 60 alumnos              | Cumplido                      |
+| Auditoría y trazabilidad                  | Propuesto / en implementación |
+| Validación y evidencias de implementación | Cumplido                      |
+| Documentación actualizada                 | Cumplido                      |
+| GitHub con commits descriptivos           | Pendiente de push final       |
+| Evidencias capturadas                     | Pendiente de capturas finales |
 
 ---
 
-## 30. Pendientes técnicos
+## 32. Pendientes técnicos
 
 Aunque el MVP ya cuenta con avances importantes, se identifican pendientes para una versión más completa:
 
@@ -711,15 +812,15 @@ Aunque el MVP ya cuenta con avances importantes, se identifican pendientes para 
 | Reportes              | Exportar horarios y métricas                                                     |
 | Validación avanzada   | Considerar prerrequisitos y cupos por sección                                    |
 | Optimización avanzada | Mejorar eficiencia del motor CSP para grandes volúmenes                          |
-| Auditoría             | Registrar cambios administrativos                                                |
+| Auditoría completa    | Registrar cambios administrativos reales en `audit_logs`                         |
 | Despliegue            | Publicar el sistema en entorno cloud o servidor institucional                    |
 
 ---
 
-## 31. Conclusión
+## 33. Conclusión
 
-La actualización del MVP de SmartSched-UC demuestra un avance significativo en análisis, implementación y validación técnica. El sistema ya no se limita a mostrar una propuesta visual, sino que incorpora reglas académicas, validaciones de horarios, control de docentes, aulas, infraestructura y conexión progresiva con PostgreSQL.
+La actualización del MVP de SmartSched-UC demuestra un avance significativo en análisis, implementación y validación técnica. El sistema ya no se limita a mostrar una propuesta visual, sino que incorpora reglas académicas, validaciones de horarios, control de docentes, aulas, infraestructura, conexión progresiva con PostgreSQL, auditoría y evidencias de implementación.
 
 La aplicación mantiene una arquitectura ordenada, permite trabajar con datos locales como respaldo, integra una base de datos relacional para escenarios reales, considera pruebas TDD y mejora la experiencia del usuario mediante una interfaz orientada a matrícula.
 
-Con estas evidencias, el proyecto demuestra coherencia entre problema, requerimientos, arquitectura, implementación, pruebas, documentación y repositorio. Además, queda preparado para continuar con funcionalidades más avanzadas como CRUD completo, matrícula real, reportes, autenticación y despliegue.
+Con estas evidencias, el proyecto demuestra coherencia entre problema, requerimientos, arquitectura, implementación, pruebas, documentación y repositorio. Además, queda preparado para continuar con funcionalidades más avanzadas como CRUD completo, matrícula real, reportes, autenticación, auditoría completa y despliegue.
