@@ -27,3 +27,26 @@ Smarts_Uc/
     client/   # Frontend (React)
     server/   # Backend (Node.js + Express + MongoDB/Mongoose)
     docs/     # Especificación formal SDD y artefactos
+
+
+---
+
+## 🌱 Desarrollo web responsable y Green MERN
+
+Como parte de la actualización del proyecto, SmartSched-UC incorpora un análisis de desarrollo web responsable orientado a reducir el impacto ambiental del software y mejorar la eficiencia del sistema.
+
+Las mejoras consideradas incluyen:
+
+- análisis del impacto ambiental del desarrollo, despliegue y uso de aplicaciones web;
+- identificación de oportunidades de optimización en frontend, backend, base de datos y APIs;
+- uso de compresión HTTP en Express;
+- paginación opcional en endpoints académicos;
+- optimización de consultas MongoDB mediante selección de campos y uso de `.lean()`;
+- caché temporal para reducir solicitudes repetidas;
+- reducción del tamaño de respuestas JSON;
+- documentación de evidencias antes/después mediante Lighthouse, DevTools o herramientas equivalentes.
+
+Documento relacionado:
+
+```text
+docs/22_desarrollo_web_responsable_green_mern.md
