@@ -1,4 +1,4 @@
-# Revisión integral de calidad de SmartSched-UC mediante SonarQube, OWASP Top 10 2025, WCAG, SUS y pruebas automatizadas
+# Revisión integral de calidad de SmartSched-UC mediante SonarQube, OWASP , WCAG, SUS y pruebas automatizadas
 
 ## 1. Propósito del documento
 
