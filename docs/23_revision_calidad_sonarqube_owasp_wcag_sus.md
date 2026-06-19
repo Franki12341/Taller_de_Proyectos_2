@@ -150,19 +150,13 @@ con la configuración necesaria para analizar frontend, backend y reportes de co
 | SONAR-02 | `[COMPLETAR]`        | `[COMPLETAR]` | `[COMPLETAR]`              | `[COMPLETAR]` | `[COMPLETAR]` |
 | SONAR-03 | `[COMPLETAR]`        | `[COMPLETAR]` | `[COMPLETAR]`              | `[COMPLETAR]` | `[COMPLETAR]` |
 
-Ejemplos de problemas que podrían detectarse:
+Los problemas detectados:
 
-* funciones demasiado extensas;
-* condiciones complejas;
-* código duplicado;
 * variables sin uso;
 * manejo inseguro de errores;
 * credenciales expuestas;
 * promesas sin control de error;
 * baja cobertura;
-* validaciones repetidas;
-* bloques `catch` vacíos;
-* consultas construidas de forma insegura.
 
 ---
 
@@ -355,7 +349,7 @@ CREATE TABLE IF NOT EXISTS audit_logs (
 
 ## 13. Riesgo residual
 
-Después de implementar mitigaciones, pueden permanecer riesgos residuales:
+Después de implementar mitigaciones,  permanecen riesgos residuales:
 
 | Riesgo residual         | Motivo                                   | Tratamiento futuro                       |
 | ----------------------- | ---------------------------------------- | ---------------------------------------- |
