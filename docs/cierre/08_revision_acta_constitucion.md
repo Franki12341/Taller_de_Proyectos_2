@@ -28,14 +28,14 @@ Se verificÃ³ cumplimiento funcional del nÃºcleo del proyecto, pero tambiÃ©
 
 | Criterio fundacional | Resultado | JustificaciÃ³n |
 |---|---|---|
-| PropÃ³sito | Cumplido | El producto responde al problema de simulaciÃ³n acadÃ©mica con restricciones. |
+| Proposito | Cumplido | El producto responde al problema de simulaciÃ³n acadÃ©mica con restricciones. |
 | Objetivo | Cumplido | El nÃºcleo funcional estÃ¡ implementado y probado. |
-| Criterios de Ã©xito | Parcialmente cumplido | Funcionalidad sÃ­; parte de la evidencia de calidad, cronograma y costos requiere complemento manual. |
+| Criterios de Exito | Parcialmente cumplido | Funcionalidad sÃ­; parte de la evidencia de calidad, cronograma y costos requiere complemento manual. |
 | Alcance | Parcialmente cumplido | El MVP actual supera el mÃ­nimo funcional, pero ciertos documentos iniciales no reflejan el estado real. |
 | Interesados | Cumplido | Se identifican estudiantes, coordinaciÃ³n y docente evaluador en la soluciÃ³n y el cierre. |
-| Riesgos iniciales | Parcialmente cumplido | Existen riesgos documentados, aunque la documentaciÃ³n histÃ³rica requiere consolidaciÃ³n. |
-| Restricciones | Parcialmente cumplido | El lÃ­mite de crÃ©ditos cambiÃ³ y debe quedar explicitado como evoluciÃ³n controlada. |
-| Entregables | Cumplido | CÃ³digo, documentaciÃ³n, pruebas y evidencias existen. |
+| Riesgos iniciales | Parcialmente cumplido | Existen riesgos documentados, aunque la documentacion historica requiere consolidaciÃ³n. |
+| Restricciones | Parcialmente cumplido | El li­mite de creditos cambio y debe quedar explicitado como evolucion controlada. |
+| Entregables | Cumplido | Codigo, documentacion, pruebas y evidencias existen. |
 
 ## Decision de cierre
 
