@@ -27,9 +27,9 @@
 
 ## Trazabilidad relacionada
 
-- Riesgos â†’ incidentes: ver [`04_registro_incidentes.md`](./04_registro_incidentes.md)
-- Riesgos â†’ defectos: ver [`06_registro_defectos.md`](./06_registro_defectos.md)
-- Riesgos â†’ cambios: ver [`12_control_configuracion_cambios.md`](./12_control_configuracion_cambios.md)
+- Riesgos a’ incidentes: ver [`04_registro_incidentes.md`](./04_registro_incidentes.md)
+- Riesgos a’ defectos: ver [`06_registro_defectos.md`](./06_registro_defectos.md)
+- Riesgos a’ cambios: ver [`12_control_configuracion_cambios.md`](./12_control_configuracion_cambios.md)
 
 ## Evidencias relacionadas
 
