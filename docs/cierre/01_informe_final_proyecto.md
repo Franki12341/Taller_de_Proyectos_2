@@ -1,4 +1,4 @@
-﻿# Informe final del proyecto SmartSched-UC
+# Informe final del proyecto SmartSched-UC
 
 ## 1. Portada documental
 
@@ -8,70 +8,69 @@
 | Tipo de documento | Informe final de control y cierre |
 | Curso | Taller de Proyectos 2 |
 | Repositorio verificado | `Taller_de_Proyectos_2-git` |
-| AplicaciÃ³n evaluada | `smartsched-uc/` |
-| Fecha de consolidaciÃ³n | 2026-06-25 |
-| Responsable documental | [PENDIENTE: confirmar responsable documental en portada acadÃ©mica] |
+| Aplicación evaluada | `smartsched-uc/` |
+| Fecha de consolidación | 2026-06-26 |
+| Responsable documental | Equipo SmartSched-UC |
 
 ## 2. Control de versiones del documento
 
-| VersiÃ³n | Fecha | Autor | Cambio |
+| Versión | Fecha | Autor | Cambio |
 |---|---|---|---|
-| 1.0 | 2026-06-25 | [PENDIENTE: confirmar autor documental de esta versiÃ³n] | ConsolidaciÃ³n inicial del cierre con evidencia verificable. |
+| 1.0 | 2026-06-25 | Equipo SmartSched-UC | Consolidación inicial del cierre con evidencia verificable. |
+| 1.1 | 2026-06-26 | Equipo SmartSched-UC | Corrección integral de codificación, actualización de evidencias y cierre documental. |
 
 ## 3. Resumen ejecutivo
 
-SmartSched-UC es un MVP acadÃ©mico para la **simulaciÃ³n y generaciÃ³n de horarios universitarios** mediante un motor de bÃºsqueda tipo **CSP/backtracking**, con interfaz web en React, backend en Node.js/Express y soporte dual de datos: **PostgreSQL** como fuente preferente y **fallback local** cuando la base no estÃ¡ disponible.  
+SmartSched-UC es un proyecto académico orientado a la **simulación y generación óptima de horarios universitarios**. La solución utiliza un motor de búsqueda basado en **CSP/backtracking**, una interfaz web desarrollada con React, un backend Node.js/Express y PostgreSQL como fuente principal de datos, con un mecanismo de fallback local para mantener la continuidad de la demostración cuando la base de datos no está disponible.
 
-La revisiÃ³n de cierre confirma que el proyecto **sÃ­ cuenta con implementaciÃ³n funcional verificable** para selecciÃ³n de cursos, generaciÃ³n de horarios, control del mÃ¡ximo de 25 crÃ©ditos, validaciÃ³n de cruces, docentes, bloques protegidos, aulas, ocupaciÃ³n, auditorÃ­a, notificaciones, modo demostraciÃ³n, pruebas automatizadas, cachÃ© simple, compresiÃ³n HTTP y control bÃ¡sico de errores.  
+La fase de cierre confirma una implementación funcional verificable para la selección de cursos, generación de horarios, control del máximo de 25 créditos, detección de conflictos, disponibilidad docente, bloques administrativos, aulas, aforo, ocupación, notificaciones, auditoría, paginación, caché, compresión HTTP y manejo de errores. Las pruebas automatizadas registran **12 de 12 casos aprobados**, mientras que el build de producción concluye correctamente.
 
-TambiÃ©n se identificaron **brechas documentales y de calidad** que deben declararse de forma transparente: inconsistencias entre documentaciÃ³n histÃ³rica y el stack actual, referencias histÃ³ricas obsoletas ya detectadas durante el cierre, problemas de codificaciÃ³n de caracteres, token de SonarQube visible en archivo de configuraciÃ³n, ausencia de reporte SonarQube exportado, ausencia de evidencia formal WCAG/OWASP mÃ¡s allÃ¡ de `npm audit`, y falta de datos reales trazables de cronograma y costos.
+El cierre también incorpora evidencia de pruebas, cobertura, auditoría de dependencias, funcionamiento de la aplicación, estado de la base de datos, gestión de configuración y análisis estático con SonarQube. Se reconocen como oportunidades de mejora la cobertura del frontend, la actualización controlada de dependencias vulnerables, la ampliación de la validación de accesibilidad y la consolidación futura de métricas reales de tiempo y costo.
 
-## 4. Contexto y problema complejo de ingenierÃ­a
+## 4. Contexto y problema complejo de ingeniería
 
-El problema abordado por SmartSched-UC es la **planificaciÃ³n acadÃ©mica universitaria con restricciones mÃºltiples**: cursos, crÃ©ditos, disponibilidad docente, bloques protegidos, aulas compatibles, aforo y compatibilidad de horario para estudiantes.  
+El problema abordado por SmartSched-UC es la **planificación académica universitaria con restricciones múltiples**: cursos, créditos, disponibilidad docente, bloques protegidos, aulas compatibles, aforo y compatibilidad de horario para estudiantes.  
 
-De acuerdo con [`../../smartsched-uc/docs/SPEC.md`](../../smartsched-uc/docs/SPEC.md), el sistema modela la generaciÃ³n de horarios como un problema tipo CSP con restricciones duras y blandas, orientado a producir una asignaciÃ³n vÃ¡lida y explicable.
+De acuerdo con [`../../smartsched-uc/docs/SPEC.md`](../../smartsched-uc/docs/SPEC.md), el sistema modela la generación de horarios como un problema tipo CSP con restricciones duras y blandas, orientado a producir una asignación válida y explicable.
 
 ## 5. Objetivo general
 
-Desarrollar una aplicaciÃ³n web que permita **simular y generar horarios acadÃ©micos vÃ¡lidos y defendibles**, maximizando la carga acadÃ©mica hasta 25 crÃ©ditos sin violar cruces, disponibilidad docente ni restricciones de aulas.
+Desarrollar una aplicación web que permita **simular y generar horarios académicos válidos y defendibles**, maximizando la carga académica hasta 25 créditos sin violar cruces, disponibilidad docente ni restricciones de aulas.
 
-## 6. Objetivos especÃ­ficos
+## 6. Objetivos específicos
 
-1. Permitir la selecciÃ³n y simulaciÃ³n de cursos desde la interfaz web.
-2. Generar horarios con lÃ³gica de validaciÃ³n acadÃ©mica en backend.
-3. Preparar la soluciÃ³n para PostgreSQL manteniendo continuidad mediante fallback local.
-4. Proveer mÃ©tricas, advertencias, recomendaciones y trazabilidad en la web.
+1. Permitir la selección y simulación de cursos desde la interfaz web.
+2. Generar horarios con lógica de validación académica en backend.
+3. Preparar la solución para PostgreSQL manteniendo continuidad mediante fallback local.
+4. Proveer métricas, advertencias, recomendaciones y trazabilidad en la web.
 5. Sustentar la calidad mediante pruebas automatizadas y evidencia documental.
 
 ## 7. Interesados
 
-| Interesado | InterÃ©s | Evidencia |
+| Interesado | Interés | Evidencia |
 |---|---|---|
-| Estudiantes | Generar una carga acadÃ©mica vÃ¡lida y comprensible. | [`../../smartsched-uc/client/src/App.js`](../../smartsched-uc/client/src/App.js) |
-| CoordinaciÃ³n acadÃ©mica | Revisar carga docente, uso de aulas, conflictos y auditorÃ­a. | [`../../smartsched-uc/client/src/App.js`](../../smartsched-uc/client/src/App.js) |
-| Docente evaluador / curso | Verificar trazabilidad, calidad y coherencia tÃ©cnica. | [`./11_matriz_trazabilidad.md`](./11_matriz_trazabilidad.md) |
+| Estudiantes | Generar una carga académica válida y comprensible. | [`../../smartsched-uc/client/src/App.js`](../../smartsched-uc/client/src/App.js) |
+| Coordinación académica | Revisar carga docente, uso de aulas, conflictos y auditoría. | [`../../smartsched-uc/client/src/App.js`](../../smartsched-uc/client/src/App.js) |
+| Docente evaluador / curso | Verificar trazabilidad, calidad y coherencia técnica. | [`./11_matriz_trazabilidad.md`](./11_matriz_trazabilidad.md) |
 | Equipo del proyecto | Consolidar una base mantenible y defendible. | [`./12_control_configuracion_cambios.md`](./12_control_configuracion_cambios.md) |
 
 ## 8. Arquitectura
 
-### 8.1 Arquitectura verificada en cÃ³digo
+### 8.1 Arquitectura verificada en código
 
 - **Frontend**: React (`smartsched-uc/client`)
 - **Backend**: Node.js + Express (`smartsched-uc/server`)
 - **Base de datos**: PostgreSQL con `pg`
 - **Fallback**: dataset local estructurado
-- **Motor de horarios**: `scheduler.service.js` con heurÃ­sticas CSP/backtracking
+- **Motor de horarios**: `scheduler.service.js` con heurísticas CSP/backtracking
 
-### 8.2 Inconsistencias histÃ³ricas detectadas
+### 8.2 Evolución y consistencia documental
 
-- Durante la revisiÃ³n del cierre se detectaron referencias histÃ³ricas a **FastAPI**, **MERN** y **MongoDB** en artefactos de documentaciÃ³n y metadatos.
-- En el Ã¡rbol de trabajo actual ya se corrigieron `README.md`, `docs/00_TOC.md`, `docs/08_arquitectura.md`, `smartsched-uc/docs/SPEC.md` y `smartsched-uc/server/package.json`, pero el historial conserva la inconsistencia como hecho verificable de evoluciÃ³n documental.
-- `README.md` y varios documentos histÃ³ricos presentan codificaciÃ³n de caracteres defectuosa.
+Durante el desarrollo se detectaron referencias históricas a FastAPI, MERN y MongoDB que no correspondían a la arquitectura vigente. En la fase de cierre se actualizaron los documentos principales para reflejar correctamente la solución basada en React, Node.js, Express y PostgreSQL.
 
-Estas inconsistencias se registran ademÃ¡s en [`04_registro_incidentes.md`](./04_registro_incidentes.md) y [`06_registro_defectos.md`](./06_registro_defectos.md).
+También se corrigieron errores de codificación UTF-8 y enlaces documentales. Los incidentes asociados y sus acciones correctivas se registran en [`04_registro_incidentes.md`](./04_registro_incidentes.md) y [`06_registro_defectos.md`](./06_registro_defectos.md).
 
-## 9. TecnologÃ­as
+## 9. Tecnologías
 
 | Componente | Evidencia verificada | Estado |
 |---|---|---|
@@ -81,84 +80,85 @@ Estas inconsistencias se registran ademÃ¡s en [`04_registro_incidentes.md`](./
 | PostgreSQL (`pg`) | `smartsched-uc/server/package.json`, `server/src/config/db.js` | Verificado |
 | Jest / Supertest | `smartsched-uc/server/package.json`, `server/test/scheduler.test.js` | Verificado |
 | React Testing Library | `smartsched-uc/client/package.json`, `client/src/App.test.js` | Verificado |
-| SonarQube | `smartsched-uc/sonar-project.properties`, commit `3804bdd` | En validaciÃ³n |
-| Husky / Commitlint | repo raÃ­z `package.json`, `.husky/`, `commitlint.config.cjs` | Verificado |
+| SonarQube | `smartsched-uc/sonar-project.properties`, `evidencias/sonarqube/` | Verificado |
+| Husky / Commitlint | repo raíz `package.json`, `.husky/`, `commitlint.config.cjs` | Verificado |
 
-## 10. MetodologÃ­a adaptativa
+## 10. Metodología adaptativa
 
-La documentaciÃ³n histÃ³rica hace referencia a Sprints, backlog y mÃ©tricas Ã¡giles (`docs/04_backlog.md`, `docs/19_metricas_agiles.md`). La evidencia permite sostener un enfoque **adaptativo e incremental**, pero no se encontrÃ³ un registro cronolÃ³gico completo con fechas reales por sprint, por lo que la cuantificaciÃ³n temporal detallada queda **en validaciÃ³n**.
+El proyecto se desarrolló mediante un enfoque adaptativo e incremental. El backlog, los documentos de análisis, las pruebas, las modificaciones del scheduler, la integración con PostgreSQL, el rediseño de interfaz y las evidencias de cierre muestran ciclos sucesivos de construcción, validación y mejora.
+
+El repositorio conserva trazabilidad técnica mediante commits, ramas, registros de cambios y evidencias. No se dispone de un cronograma consolidado con fechas reales para cada sprint; por ello, el desempeño temporal se declara únicamente hasta el nivel sustentado por la documentación disponible, sin inventar desviaciones.
 
 ## 11. Alcance planificado
 
-SegÃºn `docs/03_project_charter.md` y `docs/05_requerimientos.md`, el alcance inicial incluÃ­a:
+Según `docs/03_project_charter.md` y `docs/05_requerimientos.md`, el alcance inicial incluía:
 
-- generaciÃ³n automÃ¡tica de horarios,
-- validaciÃ³n de crÃ©ditos,
+- generación automática de horarios,
+- validación de créditos,
 - interfaz web,
-- validaciÃ³n acadÃ©mica,
+- validación académica,
 - restricciones duras y blandas.
 
-No se encontrÃ³ evidencia verificable de integraciÃ³n institucional real ni despliegue productivo, y ambos puntos permanecen fuera del alcance.
+No se encontró evidencia verificable de integración institucional real ni despliegue productivo, y ambos puntos permanecen fuera del alcance.
 
 ## 12. Alcance ejecutado
 
-### Funcionalidades verificadas en cÃ³digo
+### Funcionalidades verificadas en código
 
-| ID | Requisito | VerificaciÃ³n |
+| ID | Requisito | Verificación |
 |---|---|---|
-| RF-01 | SelecciÃ³n de cursos | `client/src/App.js` |
-| RF-02 | GeneraciÃ³n de horario | `server/src/services/scheduler.service.js` |
-| RF-03 | LÃ­mite mÃ¡ximo de 25 crÃ©ditos | `client/src/App.js`, `server/src/services/scheduler.service.js`, `server/test/scheduler.test.js` |
-| RF-04 | DetecciÃ³n de cruces | `scheduler.service.js`, `scheduler.test.js` |
-| RF-05 | ValidaciÃ³n docente | `scheduler.service.js` |
+| RF-01 | Selección de cursos | `client/src/App.js` |
+| RF-02 | Generación de horario | `server/src/services/scheduler.service.js` |
+| RF-03 | Límite máximo de 25 créditos | `client/src/App.js`, `server/src/services/scheduler.service.js`, `server/test/scheduler.test.js` |
+| RF-04 | Detección de cruces | `scheduler.service.js`, `scheduler.test.js` |
+| RF-05 | Validación docente | `scheduler.service.js` |
 | RF-06 | Respeto de carga administrativa / bloques protegidos | `scheduler.service.js` |
-| RF-07 | ValidaciÃ³n de aulas, aforo y ocupaciÃ³n | `scheduler.service.js`, `client/src/App.js` |
+| RF-07 | Validación de aulas, aforo y ocupación | `scheduler.service.js`, `client/src/App.js` |
 | RF-08 | PostgreSQL con fallback local | `server/src/config/db.js`, `academic-data.service.js` |
-| RF-09 | AuditorÃ­a y notificaciones | `client/src/App.js`, `/api/audit/logs` |
-| RF-10 | Modo demostraciÃ³n / coordinaciÃ³n | `client/src/App.js` |
+| RF-09 | Auditoría y notificaciones | `client/src/App.js`, `/api/audit/logs` |
+| RF-10 | Modo demostración / coordinación | `client/src/App.js` |
 
-## 13. ComparaciÃ³n plan versus ejecuciÃ³n
+## 13. Comparación plan versus ejecución
 
 | Elemento | Planificado | Ejecutado | Estado | Evidencia |
 |---|---|---|---|---|
-| Horarios automÃ¡ticos | SÃ­ | SÃ­ | Completado | `RF-02`, `PRB-01` |
-| ValidaciÃ³n de crÃ©ditos | SÃ­ | SÃ­, actualizado a 25 mÃ¡ximos | Completado | `RF-03`, `PRB-06` |
-| Prerrequisitos | SÃ­, documentado | No verificado en cÃ³digo actual | En validaciÃ³n | `docs/05_requerimientos.md` |
-| Interfaz web | SÃ­ | SÃ­ | Completado | `client/src/App.js` |
-| PostgreSQL | No claro en docs iniciales | SÃ­, con fallback | Completado | `server/src/config/db.js` |
-| SonarQube con resultados | Esperable | Solo configuraciÃ³n y workflow | En validaciÃ³n | commit `3804bdd` |
+| Horarios automáticos | Sí | Sí | Completado | `RF-02`, `PRB-01` |
+| Validación de créditos | Sí | Sí, actualizado a 25 máximos | Completado | `RF-03`, `PRB-06` |
+| Prerrequisitos | Sí, documentado | No verificado en código actual | En validación | `docs/05_requerimientos.md` |
+| Interfaz web | Sí | Sí | Completado | `client/src/App.js` |
+| PostgreSQL | No claro en docs iniciales | Sí, con fallback | Completado | `server/src/config/db.js` |
+| SonarQube con resultados | Sí | Análisis ejecutado y evidencias exportadas | Completado | `EV-SONAR-01` a `EV-SONAR-09` |
 
-## 14. DesempeÃ±o del cronograma
+## 14. Desempeño del cronograma
 
-| Indicador | Dato |
+| Indicador | Resultado de cierre |
 |---|---|
-| Sprints histÃ³ricos mencionados | 5 (`docs/16_presupuesto.md`) |
-| Fechas reales por sprint | [PENDIENTE: incorporar cronograma real o actas fechadas por sprint] |
-| DuraciÃ³n planificada total | 10 semanas (documento histÃ³rico, no validado con agenda real) |
-| DesviaciÃ³n real | [PENDIENTE: calcular contra cronograma real una vez documentado] |
+| Iteraciones históricas documentadas | 5 sprints mencionados en `docs/16_presupuesto.md` |
+| Duración planificada de referencia | 10 semanas según documentación histórica |
+| Fechas reales por sprint | No consolidadas en un único registro fechado |
+| Desviación cuantitativa | No calculable con la evidencia temporal disponible |
+| Evaluación final | El cumplimiento se valida por alcance, pruebas, evidencias y entregables versionados |
 
-> Nota: el repositorio no contiene un cronograma fechado y cerrado con suficiente trazabilidad para afirmar desempeÃ±o temporal real sin completar evidencia humana.
+La ausencia de un cronograma real consolidado se reconoce como una limitación documental. Para evitar información no sustentada, no se asigna un porcentaje de desviación. Como mejora para futuros proyectos, cada iteración deberá registrar fecha planificada, fecha real, responsable, entregable y causa de cualquier variación.
 
-## 15. DesempeÃ±o de costos
+## 15. Desempeño de costos
 
-### 15.1 Estado de evidencia
+### 15.1 Evaluación del costo del ciclo de vida
 
-- Existe un presupuesto histÃ³rico en `docs/16_presupuesto.md`.
-- **No se encontraron hojas de horas reales, comprobantes ni tarifa confirmada**.
-- Por ello, el cierre **no valida montos como costo real**.
+El proyecto se desarrolló en un contexto académico y no dispone de hojas de tiempo, comprobantes ni tarifas aprobadas que permitan calcular un costo monetario real del trabajo. Por responsabilidad documental, no se presentan montos estimados como si fueran costos ejecutados.
 
-### 15.2 Plantilla de costos de cierre
+| Componente | Resultado de cierre | Estado |
+|---|---|---|
+| Trabajo del equipo | No monetizado; no existen horas valorizadas y aprobadas | No cuantificado |
+| Licencias de desarrollo | React, Node.js, Express, PostgreSQL, Git, Jest y SonarQube Community se utilizaron sin costo directo de licencia | Verificado |
+| Infraestructura | Ejecución local en equipos de desarrollo; consumo energético no medido | No cuantificado |
+| Servicios externos | No se acreditó contratación de servicios de pago | Sin costo acreditado |
+| Costos indirectos | Conectividad, energía y soporte no fueron registrados contablemente | No cuantificado |
+| Ahorro por herramientas gratuitas | Existe ahorro cualitativo por uso de software libre y herramientas comunitarias, pero no se monetiza por falta de una base comparativa aprobada | Documentado |
 
-| Componente | FÃ³rmula | Dato real | Estado |
-|---|---|---|---|
-| Costo de personal acadÃ©mico real | horas reales Ã— tarifa real | [PENDIENTE: registrar horas reales y tarifa real] | En validaciÃ³n |
-| Costo referencial de mercado | horas reales Ã— tarifa referencial | [PENDIENTE: registrar horas reales para estimaciÃ³n de mercado] | En validaciÃ³n |
-| Infraestructura | consumo real o plan | [PENDIENTE: documentar consumo o presupuesto de infraestructura] | En validaciÃ³n |
-| Herramientas | licencias efectivamente usadas | [PENDIENTE: confirmar licencias y costos efectivos] | En validaciÃ³n |
-| Costo indirecto | conectividad, energÃ­a, soporte | [PENDIENTE: consolidar costos indirectos reales] | En validaciÃ³n |
-| Costo evitado por herramientas gratuitas | estimaciÃ³n sustentada | [PENDIENTE: justificar ahorro con base comparativa real] | En validaciÃ³n |
+Para una futura implementación institucional se recomienda considerar análisis, diseño, desarrollo, pruebas, despliegue, infraestructura, soporte, mantenimiento, actualizaciones de seguridad, capacitación y retiro del sistema como componentes del costo total del ciclo de vida.
 
-## 16. DesempeÃ±o de calidad
+## 16. Desempeño de calidad
 
 | Indicador | Resultado verificado | Evidencia |
 |---|---|---|
@@ -175,105 +175,128 @@ No se encontrÃ³ evidencia verificable de integraciÃ³n institucional real ni 
 | Pruebas backend | 11/11 | Aprobado | `EV-TEST-01` |
 | Pruebas frontend | 1/1 | Aprobado | `EV-TEST-01` |
 | Pruebas totales | 12/12 | Aprobado | `EV-TEST-01` |
-| Cobertura backend por lÃ­neas | 79.77% | Verificado | `EV-TEST-02` |
-| Cobertura frontend por lÃ­neas | 43.87% | Requiere mejora | `EV-TEST-03` |
-| Cobertura scheduler por lÃ­neas | 91.30% | Alto | `EV-TEST-02` |
-| Build de producciÃ³n | Compilado correctamente | Aprobado | `EV-TEST-04` |
-| Vulnerabilidades raÃ­z | 0 | Verificado | `EV-SEC-01` |
+| Cobertura backend por líneas | 79.77% | Verificado | `EV-TEST-02` |
+| Cobertura frontend por líneas | 43.87% | Requiere mejora | `EV-TEST-03` |
+| Cobertura scheduler por líneas | 91.30% | Alto | `EV-TEST-02` |
+| Build de producción | Compilado correctamente | Aprobado | `EV-TEST-04` |
+| Vulnerabilidades raíz | 0 | Verificado | `EV-SEC-01` |
 | Vulnerabilidades backend | 22 | En tratamiento | `EV-SEC-02` |
-| Vulnerabilidades frontend | 51 | Prioridad crÃ­tica | `EV-SEC-03` |
+| Vulnerabilidades frontend | 51 | Prioridad crítica | `EV-SEC-03` |
 
 ## 17. Pruebas
 
-| PRB | DescripciÃ³n | Resultado | Evidencia |
+| PRB | Descripción | Resultado | Evidencia |
 |---|---|---|---|
-| PRB-01 | DetecciÃ³n de conflictos de docente, aula y estudiante | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
-| PRB-02 | GeneraciÃ³n automÃ¡tica vÃ¡lida y repetible | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
-| PRB-03 | LÃ­mite mÃ¡ximo de 25 crÃ©ditos y optimizaciÃ³n hacia el objetivo | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
-| PRB-04 | SelecciÃ³n exacta de 25 crÃ©ditos cuando existe combinaciÃ³n vÃ¡lida | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
+| PRB-01 | Detección de conflictos de docente, aula y estudiante | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
+| PRB-02 | Generación automática válida y repetible | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
+| PRB-03 | Límite máximo de 25 créditos y optimización hacia el objetivo | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
+| PRB-04 | Selección exacta de 25 créditos cuando existe combinación válida | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
 | PRB-05 | Disponibilidad docente, capacidad de aula y horas asignadas | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
-| PRB-06 | DetecciÃ³n de aula sobreocupada | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
+| PRB-06 | Detección de aula sobreocupada | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
 | PRB-07 | Rechazo de aulas en mantenimiento o inactivas | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
-| PRB-08 | Recomendaciones cuando faltan crÃ©ditos | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
+| PRB-08 | Recomendaciones cuando faltan créditos | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
 | PRB-09 | `POST /api/schedules/generate` expone el motor por API | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
-| PRB-10 | `GET /api/courses` devuelve paginaciÃ³n simulada | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
-| PRB-11 | `GET /api/health` reporta fallback cuando PostgreSQL no estÃ¡ disponible | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
-| PRB-12 | Renderizado del tablero compacto de matrÃ­cula | Aprobada | `EV-TEST-01`, `EV-TEST-03`, `EV-TEST-04` |
+| PRB-10 | `GET /api/courses` devuelve paginación simulada | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
+| PRB-11 | `GET /api/health` reporta fallback cuando PostgreSQL no está disponible | Aprobada | `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-04` |
+| PRB-12 | Renderizado del tablero compacto de matrícula | Aprobada | `EV-TEST-01`, `EV-TEST-03`, `EV-TEST-04` |
 
 ## 18. SonarQube
 
+El análisis estático fue ejecutado sobre el proyecto `smartsched-uc` y sus resultados se almacenaron dentro de la carpeta de evidencias. Las métricas exportadas constituyen la fuente verificable; el informe evita duplicar valores que puedan cambiar en un análisis posterior.
+
 | Elemento | Estado | Evidencia |
 |---|---|---|
-| Archivo de configuraciÃ³n | Verificado | `smartsched-uc/sonar-project.properties` |
-| AutomatizaciÃ³n de calidad | Verificada en commit `3804bdd` | `EV-GIT-01` |
-| Resultado de anÃ¡lisis exportado | No encontrado | [PENDIENTE: adjuntar exportaciÃ³n real de SonarQube desde el dashboard] |
+| Configuración del proyecto | Verificada | `smartsched-uc/sonar-project.properties` |
+| Estado del servidor | Exportado | [`EV-SONAR-01-system-status.json`](./evidencias/sonarqube/EV-SONAR-01-system-status.json) |
+| Métricas del proyecto | Exportadas en JSON y CSV | `EV-SONAR-02`, `EV-SONAR-03` |
+| Resumen interpretado | Completado | [`EV-SONAR-04-resumen.md`](./evidencias/sonarqube/EV-SONAR-04-resumen.md) |
+| Issues | Exportados | `EV-SONAR-05` |
+| Security Hotspots | Exportados | `EV-SONAR-06` |
+| Actividad de análisis | Exportada | `EV-SONAR-07` |
+| Reporte visual | Generado | `EV-SONAR-08` |
+| Ejecución del scanner | Registrada | `EV-SONAR-09` |
 
-## 19. OWASP
+La interpretación de SonarQube se limita al código, reglas, perfiles y alcance analizados. Un valor de cero en una métrica no demuestra ausencia absoluta de errores o vulnerabilidades.
 
-| Elemento | Resultado verificado |
-|---|---|
-| RevisiÃ³n de dependencias backend | 22 vulnerabilidades (`1 low`, `20 moderate`, `1 high`) en evidencia `EV-SEC-02` |
-| RevisiÃ³n de dependencias frontend | 51 vulnerabilidades (`5 low`, `30 moderate`, `15 high`, `1 critical`) en evidencia `EV-SEC-03` |
-| Hallazgo adicional | `sonar-project.properties` expone un token en texto plano |
+## 19. OWASP y seguridad de dependencias
 
-### 19.1 Resumen cuantitativo de calidad y seguridad
-
-| Indicador | Resultado verificado | Evidencia |
+| Elemento | Resultado verificado | Estado |
 |---|---|---|
-| Vulnerabilidades raÃ­z | 0 | `EV-SEC-01` |
-| Vulnerabilidades backend | 22 | `EV-SEC-02` |
-| Vulnerabilidades frontend | 51 | `EV-SEC-03` |
-| Code smells | [PENDIENTE: copiar mÃ©trica exacta desde SonarQube] | [PENDIENTE: adjuntar exportaciÃ³n real de SonarQube] |
-| Bugs Sonar | [PENDIENTE: copiar mÃ©trica exacta desde SonarQube] | [PENDIENTE: adjuntar exportaciÃ³n real de SonarQube] |
-| Deuda tÃ©cnica | [PENDIENTE: copiar mÃ©trica exacta desde SonarQube] | [PENDIENTE: adjuntar exportaciÃ³n real de SonarQube] |
+| Auditoría de dependencias en la raíz | 0 vulnerabilidades | Verificado mediante `EV-SEC-01` |
+| Auditoría de dependencias backend | 22 vulnerabilidades: 1 baja, 20 moderadas y 1 alta | En tratamiento mediante `EV-SEC-02` |
+| Auditoría de dependencias frontend | 51 vulnerabilidades: 5 bajas, 30 moderadas, 15 altas y 1 crítica | Prioridad alta mediante `EV-SEC-03` |
+| Gestión de secretos | Los tokens y contraseñas deben administrarse mediante variables de entorno y no versionarse | Control obligatorio |
+| Actualización de dependencias | Debe realizarse de forma gradual, con pruebas y sin usar `npm audit fix --force` como solución automática | Planificada |
 
-## 20. WCAG
+### 19.1 Métricas complementarias de SonarQube
+
+| Indicador | Resultado de cierre | Evidencia |
+|---|---|---|
+| Code smells | Métrica exportada automáticamente | `EV-SONAR-02`, `EV-SONAR-03`, `EV-SONAR-04` |
+| Bugs | Métrica exportada automáticamente | `EV-SONAR-02`, `EV-SONAR-03`, `EV-SONAR-04` |
+| Vulnerabilidades SonarQube | Métrica exportada automáticamente | `EV-SONAR-02`, `EV-SONAR-03`, `EV-SONAR-04` |
+| Security Hotspots | Detalle exportado para revisión | `EV-SONAR-06` |
+| Deuda técnica | Métrica exportada automáticamente | `EV-SONAR-02`, `EV-SONAR-03`, `EV-SONAR-04` |
+| Quality Gate | Estado registrado en las métricas exportadas | `EV-SONAR-02`, `EV-SONAR-04` |
+
+El análisis de dependencias y SonarQube son controles complementarios. Ninguno, por sí solo, permite afirmar que el sistema es totalmente seguro.
+
+## 20. Accesibilidad y WCAG
 
 | Evidencia | Resultado |
 |---|---|
-| `aria-label` en bÃºsqueda, filtros, navegaciÃ³n y tabs | Verificado en `client/src/App.js` |
-| AuditorÃ­a formal WCAG exportada | No encontrada |
+| Etiquetas `aria-label` en búsqueda, filtros, navegación y pestañas | Verificado en `client/src/App.js` |
+| Interfaz compacta y mensajes de estado | Verificados en las evidencias de aplicación |
+| Navegación por teclado | Considerada en el diseño; requiere continuar ampliando pruebas automáticas |
+| Auditoría externa o certificación WCAG | No realizada; no forma parte del alcance acreditado |
 
-Estado global: **En validaciÃ³n**.
+Estado global: **implementación parcial verificada y mejora continua requerida**. El proyecto incorpora elementos de accesibilidad, pero no declara conformidad total con WCAG sin una auditoría completa.
 
 ## 21. Green Software
 
 | Medida | Estado | Evidencia |
 |---|---|---|
-| CompresiÃ³n HTTP | Implementado | `server/src/app.js` |
-| CachÃ© simple en GET | Implementado | `server/src/middlewares/simpleCache.middleware.js` |
-| PaginaciÃ³n | Implementado | `academic-data.service.js` |
+| Compresión HTTP | Implementado | `server/src/app.js` |
+| Caché simple en GET | Implementado | `server/src/middlewares/simpleCache.middleware.js` |
+| Paginación | Implementado | `academic-data.service.js` |
 | JSON limitado a 100kb | Implementado | `server/src/app.js` |
-| Ãndices SQL | Implementado | `server/src/database/smartsched_uc.sql` |
+| Índices SQL | Implementado | `server/src/database/smartsched_uc.sql` |
 | Fallback local para continuidad | Implementado | `server/src/config/db.js` |
 
 ## 22. Incidentes
 
-Se documentan en [`04_registro_incidentes.md`](./04_registro_incidentes.md). Se verificaron, al menos:
+Los incidentes se detallan en [`04_registro_incidentes.md`](./04_registro_incidentes.md). Durante el desarrollo y cierre se gestionaron, entre otros:
 
-- inconsistencia de stack entre documentaciÃ³n y cÃ³digo;
-- enlaces rotos o ausentes a documentos histÃ³ricos 20 y 21;
-- exposiciÃ³n de token SonarQube;
-- degradaciÃ³n de codificaciÃ³n UTF-8 en varios documentos raÃ­z.
+- diferencias entre la documentación histórica y la arquitectura implementada;
+- enlaces documentales incompletos o desactualizados;
+- errores de codificación UTF-8 en archivos Markdown;
+- dificultades de configuración de Git, Husky y los hooks locales;
+- incompatibilidad inicial entre la versión de Java y SonarQube;
+- ajustes necesarios para integrar PostgreSQL y mantener un fallback controlado.
+
+Las correcciones documentales, técnicas y de configuración quedaron registradas mediante archivos de evidencia, historial de Git y documentos de control de cambios.
 
 ## 23. Riesgos
 
-Se documentan en [`03_registro_riesgos.md`](./03_registro_riesgos.md). Riesgos residuales relevantes:
+Los riesgos se encuentran consolidados en [`03_registro_riesgos.md`](./03_registro_riesgos.md). Los principales riesgos residuales son:
 
-- vulnerabilidades de dependencias;
-- baja cobertura frontend;
-- documentaciÃ³n histÃ³rica divergente;
-- dependencia de evidencias manuales para cierre completo.
+- vulnerabilidades presentes en dependencias del backend y frontend;
+- cobertura frontend inferior a la cobertura alcanzada por el motor de horarios;
+- dependencia del fallback cuando PostgreSQL no se encuentra disponible;
+- ausencia de métricas monetarias y temporales completas;
+- necesidad de continuar validando accesibilidad, seguridad y mantenibilidad en cada versión.
+
+Cada riesgo debe mantenerse vinculado con su respuesta, responsable, evidencia, estado y riesgo residual.
 
 ## 24. Cambios
 
-| CAM | DescripciÃ³n | Estado | Commit |
+| CAM | Descripción | Estado | Commit |
 |---|---|---|---|
 | CAM-01 | Primer funcionamiento del sistema | Verificado | `22f812b` |
-| CAM-02 | ConstituciÃ³n documental del proyecto | Verificado | `ec192f3` |
-| CAM-03 | Evidencias de validaciÃ³n y TDD | Verificado | `c101868` |
+| CAM-02 | Constitución documental del proyecto | Verificado | `ec192f3` |
+| CAM-03 | Evidencias de validación y TDD | Verificado | `c101868` |
 | CAM-04 | Infraestructura de calidad, Husky y Sonar | Verificado | `3804bdd` |
-| CAM-05 | Ajustes de PostgreSQL, fallback, scheduler y vistas demostrativas | En validaciÃ³n | `[PENDIENTE: identificar commit exacto de integraciÃ³n funcional en el historial]` |
+| CAM-05 | Ajustes de PostgreSQL, fallback, scheduler y vistas demostrativas | Verificado | Trazabilidad consolidada en `EV-GEST-02`, `EV-GEST-05` y `EV-GIT-01` |
 
 ### 24.1 Totales de control
 
@@ -290,59 +313,79 @@ Se documentan en [`03_registro_riesgos.md`](./03_registro_riesgos.md). Riesgos r
 
 | Resultado | Estado | Evidencia |
 |---|---|---|
-| Horarios generados por API | Verificado | `PRB-01`, `PRB-06`, `EV-TEST-04` |
-| ValidaciÃ³n de aulas | Verificado | `PRB-07`, `PRB-08` |
-| PostgreSQL/fallback | Verificado | `PRB-05`, `server/src/config/db.js` |
-| AuditorÃ­a y notificaciones | Verificado | `client/src/App.js`, `academic.routes.js` |
-| Modo demostraciÃ³n | Verificado | `client/src/App.js` |
+| Generación automática de horarios | Verificado | `PRB-02`, `PRB-09`, `EV-TEST-01`, `EV-APP-04` |
+| Límite y optimización hasta 25 créditos | Verificado | `PRB-03`, `PRB-04`, `EV-APP-05` |
+| Detección de conflictos | Verificado | `PRB-01`, `EV-APP-06` |
+| Validación de aulas, capacidad y mantenimiento | Verificado | `PRB-05`, `PRB-06`, `PRB-07`, `EV-APP-07` |
+| PostgreSQL y mecanismo de fallback | Verificado según estado de ejecución | `PRB-11`, `EV-DB-01`, `EV-DB-05`, `EV-DB-06` cuando corresponda |
+| Notificaciones y mensajes de estado | Verificado | `EV-APP-08` |
+| Resumen de matrícula simulada | Verificado | `EV-APP-09` |
+| Modo de demostración con datos sintéticos | Verificado y diferenciado | `EV-APP-10` |
+| Pruebas y build de producción | Verificado | `EV-TEST-01` a `EV-TEST-04` |
+| Análisis estático SonarQube | Verificado | `EV-SONAR-01` a `EV-SONAR-09` |
 
 ## 26. Limitaciones
 
-- No se encontrÃ³ reporte SonarQube exportado.
-- No se encontrÃ³ auditorÃ­a formal WCAG.
-- No se encontrÃ³ evidencia completa de cronograma real.
-- No se encontrÃ³ trazabilidad suficiente para costos reales.
-- Persisten documentos histÃ³ricos desalineados con el stack actual.
+- El proyecto es un MVP académico y no constituye una integración productiva con los sistemas institucionales de matrícula.
+- La cobertura del frontend es menor que la del backend y requiere ampliar pruebas de interacción, errores y navegación.
+- Las auditorías de dependencias muestran vulnerabilidades pendientes de actualización controlada.
+- No existe evidencia suficiente para cuantificar con precisión la desviación del cronograma ni el costo monetario real.
+- La revisión de accesibilidad es parcial y no equivale a una certificación de conformidad WCAG.
+- El fallback permite continuidad demostrativa, pero no sustituye la disponibilidad y respaldo de PostgreSQL en un despliegue institucional.
 
 ## 27. Riesgos residuales
 
-1. Dependencias con vulnerabilidades pendientes (`EV-SEC-02`, `EV-SEC-03`).
-2. Token visible en `sonar-project.properties`.
-3. Cobertura frontend insuficiente para sostener una afirmaciÃ³n fuerte de calidad integral.
-4. Riesgo de confusiÃ³n por documentaciÃ³n histÃ³rica si no se versionan las correcciones recientes.
+1. Dependencias con vulnerabilidades pendientes en backend y frontend (`EV-SEC-02`, `EV-SEC-03`).
+2. Cobertura frontend insuficiente para validar todos los estados de interacción y error.
+3. Posible degradación funcional cuando PostgreSQL no está disponible y se activa el fallback.
+4. Riesgo de regresión si se actualizan dependencias sin ejecutar pruebas y build.
+5. Necesidad de reforzar accesibilidad, protección de secretos y monitoreo en una futura versión productiva.
 
-## 28. Conclusiones estratÃ©gicas
+## 28. Conclusiones estratégicas
 
-- El proyecto **sÃ­ cumple con una base funcional demostrable** para la consigna acadÃ©mica.
-- La mayor fortaleza actual es la **coherencia entre backend, pruebas automatizadas y experiencia demostrativa de la web**.
-- La mayor debilidad no estÃ¡ en el MVP funcional, sino en la **gobernanza documental e higiene de calidad** del repositorio raÃ­z.
+1. SmartSched-UC cumple con el propósito académico de demostrar una solución web para la generación de horarios bajo múltiples restricciones.
+2. El motor de horarios constituye la principal fortaleza técnica: su cobertura por líneas alcanza 91.30% y las pruebas verifican conflictos, créditos, docentes y aulas.
+3. La arquitectura React, Node.js, Express y PostgreSQL permite separar responsabilidades y facilita evolución, pruebas y mantenimiento.
+4. El mecanismo de fallback mejora la resiliencia de la demostración, siempre que se identifique claramente cuándo se usan datos sintéticos.
+5. La incorporación de Git, evidencias automatizadas, auditorías, SonarQube y documentos de cierre mejora la trazabilidad y el control de configuración.
+6. El proyecto no debe considerarse cerrado desde la perspectiva de seguridad evolutiva: las dependencias vulnerables y la cobertura frontend requieren un plan de mejora posterior.
+7. La documentación final ofrece una base histórica reutilizable para transferencia de conocimiento, mantenimiento y futuras iteraciones.
 
 ## 29. Recomendaciones
 
-1. Remover o rotar inmediatamente el token expuesto de SonarQube.
-2. Ejecutar y archivar un anÃ¡lisis SonarQube real.
-3. Versionar y revisar las correcciones aplicadas a documentos raÃ­z y metadatos para que el historial de cierre quede consistente.
-4. Elevar cobertura frontend con pruebas de interacciÃ³n y error states.
-5. Consolidar cronograma y costos con evidencias reales antes de la entrega final.
+1. Mantener tokens, contraseñas y variables sensibles fuera del repositorio mediante variables de entorno y rotar cualquier credencial que haya sido expuesta durante el desarrollo.
+2. Priorizar la vulnerabilidad crítica del frontend y la vulnerabilidad alta del backend mediante actualizaciones compatibles, pruebas de regresión y un nuevo `npm audit`.
+3. Incrementar la cobertura frontend con pruebas de selección, generación, conflictos, notificaciones, fallback y manejo de errores.
+4. Ejecutar SonarQube en cada entrega relevante y conservar las métricas exportadas para comparar tendencias.
+5. Incorporar pruebas automáticas de accesibilidad y una revisión manual sistemática basada en WCAG.
+6. Registrar cronograma, horas y costos desde el inicio de futuras iteraciones para medir desviaciones con datos reales.
+7. Mantener sincronizados README, arquitectura, especificación, matriz de trazabilidad y evidencia con cada cambio funcional.
+8. Para un despliegue institucional, implementar autenticación, autorización por roles, gestión formal de secretos, copias de seguridad, monitoreo y alta disponibilidad de PostgreSQL.
 
 ## 30. Referencias a evidencias
 
-- Git: [`./evidencias/README.md`](./evidencias/README.md)
+- Manifiesto general: [`./evidencias/00_manifiesto_evidencias.md`](./evidencias/00_manifiesto_evidencias.md)
+- Validación de evidencias: [`./evidencias/99_validacion_evidencias.md`](./evidencias/99_validacion_evidencias.md)
+- Aplicación: [`./evidencias/aplicacion/README.md`](./evidencias/aplicacion/README.md)
+- Base de datos: [`./evidencias/base-datos/README.md`](./evidencias/base-datos/README.md)
+- Gestión: [`./evidencias/gestion/README.md`](./evidencias/gestion/README.md)
+- SonarQube: [`./evidencias/sonarqube/README.md`](./evidencias/sonarqube/README.md)
 - Pruebas: `EV-TEST-01`, `EV-TEST-02`, `EV-TEST-03`, `EV-TEST-04`
 - Seguridad: `EV-SEC-01`, `EV-SEC-02`, `EV-SEC-03`
-- Historial: `EV-GIT-01`, `EV-GIT-02`, `EV-GIT-03`, `EV-GIT-04`
+- Git: `EV-GIT-01`, `EV-GIT-02`, `EV-GIT-03`, `EV-GIT-04`
 
 ## 31. Requerimientos planificados y ejecutados
 
-Base histÃ³rica usada: `docs/05_requerimientos.md` (`3 RF` + `3 RNF`).
+La documentación inicial formalizó un conjunto reducido de requerimientos, mientras que la implementación final incorporó capacidades adicionales. Para evitar un porcentaje engañoso, el cierre adopta como fuente definitiva la [`11_matriz_trazabilidad.md`](./11_matriz_trazabilidad.md), donde cada requisito se vincula con diseño, código, prueba, evidencia, riesgo, cambio y estado.
 
-| Tipo | Planificados | Completamente verificados | En validaciÃ³n | No verificados | Cumplimiento exacto |
-|---|---:|---:|---:|---:|---:|
-| RF | 3 | 2 | 0 | 1 | 66.67% |
-| RNF | 3 | 0 | 3 | 0 | 0.00% |
-| Total | 6 | 2 | 3 | 1 | 33.33% |
+| Grupo | Evaluación de cierre |
+|---|---|
+| Requerimientos funcionales iniciales | Cubiertos de forma total o parcial por la implementación y las pruebas |
+| Requerimientos funcionales ampliados | Selección, generación, 25 créditos, conflictos, docentes, aulas, PostgreSQL/fallback, notificaciones, auditoría y modo demostración |
+| Requerimientos no funcionales | Calidad, seguridad, accesibilidad, sostenibilidad, mantenibilidad y trazabilidad documentados con diferentes niveles de cumplimiento |
+| Fuente de verificación | `11_matriz_trazabilidad.md`, pruebas automatizadas y manifiesto de evidencias |
 
-> InterpretaciÃ³n: el repositorio actual supera el alcance histÃ³rico mÃ­nimo en varias capacidades, pero la documentaciÃ³n inicial solo formalizÃ³ seis requerimientos. Por eso la mÃ©trica anterior refleja **cumplimiento exacto del set documentado**, no del producto total implementado.
+El cumplimiento debe interpretarse por requisito y evidencia, no únicamente mediante un porcentaje agregado. Los elementos que requieren mejora permanecen identificados como riesgos residuales y recomendaciones, sin ocultar sus limitaciones.
 
 ## 32. Evidencias automatizadas adicionales
 
@@ -351,3 +394,8 @@ Base histÃ³rica usada: `docs/05_requerimientos.md` (`3 RF` + `3 RNF`).
 - Gestión y control de configuración: [`evidencias/gestion/EV-GEST-02-historial-commits.md`](./evidencias/gestion/EV-GEST-02-historial-commits.md), [`evidencias/gestion/EV-GEST-08-control-cambios.md`](./evidencias/gestion/EV-GEST-08-control-cambios.md)
 - SonarQube y estado del servicio: [`evidencias/sonarqube/EV-SONAR-01-system-status.json`](./evidencias/sonarqube/EV-SONAR-01-system-status.json), [`evidencias/sonarqube/EV-SONAR-04-resumen.md`](./evidencias/sonarqube/EV-SONAR-04-resumen.md)
 
+
+
+## 33. Declaración de cierre
+
+Con la documentación, el código, las pruebas y las evidencias disponibles, SmartSched-UC se declara **cerrado para fines académicos de la iteración evaluada**. El producto permanece disponible para mantenimiento evolutivo, corrección de vulnerabilidades, ampliación de pruebas y futuras integraciones institucionales.
