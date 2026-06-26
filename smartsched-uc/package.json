@@ -8,5 +8,8 @@
     "dev:server": "npm --prefix server run dev",
     "start:client": "npm --prefix client start",
     "test:server": "npm --prefix server test"
+  },
+  "dependencies": {
+    "compression": "^1.8.1"
   }
 }

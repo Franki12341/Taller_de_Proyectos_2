@@ -824,3 +824,17 @@ La actualización del MVP de SmartSched-UC demuestra un avance significativo en 
 La aplicación mantiene una arquitectura ordenada, permite trabajar con datos locales como respaldo, integra una base de datos relacional para escenarios reales, considera pruebas TDD y mejora la experiencia del usuario mediante una interfaz orientada a matrícula.
 
 Con estas evidencias, el proyecto demuestra coherencia entre problema, requerimientos, arquitectura, implementación, pruebas, documentación y repositorio. Además, queda preparado para continuar con funcionalidades más avanzadas como CRUD completo, matrícula real, reportes, autenticación, auditoría completa y despliegue.
+
+## Estado del artefacto
+
+Este archivo se recrea únicamente para **restablecer trazabilidad documental** desde [`00_TOC.md`](./00_TOC.md), ya que el historial Git evidencia referencias previas a este documento, pero el contenido completo no está presente en el árbol actual del repositorio.
+
+## Referencias verificables
+
+- Commit de creación mencionado en historial: `c101868`
+- Actualización posterior mencionada en historial: `8346115`
+- Documento de cierre relacionado: [`cierre/evidencias/README.md`](./cierre/evidencias/README.md)
+
+## Acción recomendada
+
+Recuperar el contenido histórico exacto desde Git si se requiere como insumo formal de la entrega final.

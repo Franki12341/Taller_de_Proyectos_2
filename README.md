@@ -1,52 +1,43 @@
-# 📅 SmartSched-UC: Sistema de Generación Óptima de Horarios Académicos
+﻿# ðŸ“… SmartSched-UC: Sistema de GeneraciÃ³n Ã“ptima de Horarios AcadÃ©micos
 
 **Universidad Continental - Proyecto de Fin de Asignatura (PFA)**
-**Periodo Académico:** 202610
+**Periodo AcadÃ©mico:** 202610
 **Desarrollado por:** Helen Sayumi Castro Arteaga
 
 ---
 
-## 📖 1. Descripción del Sistema
+## ðŸ“– 1. DescripciÃ³n del Sistema
 
-El proyecto **SmartSched-UC** tiene como objetivo desarrollar una plataforma web inteligente capaz de optimizar la generación de horarios académicos. La solución busca resolver un problema complejo de planificación académica de naturaleza **NP-Hard**, caracterizado por la presencia de múltiples restricciones y variables interdependientes.
+El proyecto **SmartSched-UC** tiene como objetivo desarrollar una plataforma web inteligente capaz de optimizar la generaciÃ³n de horarios acadÃ©micos. La soluciÃ³n busca resolver un problema complejo de planificaciÃ³n acadÃ©mica de naturaleza **NP-Hard**, caracterizado por la presencia de mÃºltiples restricciones y variables interdependientes.
 
-A través del uso de técnicas de **Problemas de Satisfacción de Restricciones (CSP)** y optimización combinatoria, el sistema permite generar horarios libres de solapamientos, cumpliendo estrictamente con los prerrequisitos académicos y el límite de créditos establecidos (20 a 22 créditos por estudiante).
+A travÃ©s del uso de tÃ©cnicas de **Problemas de SatisfacciÃ³n de Restricciones (CSP)** y optimizaciÃ³n combinatoria, el sistema permite generar horarios libres de solapamientos, cumpliendo estrictamente con los prerrequisitos acadÃ©micos y el lÃ­mite de crÃ©ditos establecidos (20 a 22 crÃ©ditos por estudiante).
 
-Asimismo, el proyecto incorpora un enfoque innovador orientado a la **retención estudiantil y la flexibilidad laboral**, permitiendo la generación de horarios compactos que minimicen tiempos muertos y faciliten la inserción de los estudiantes en actividades preprofesionales.
+Asimismo, el proyecto incorpora un enfoque innovador orientado a la **retenciÃ³n estudiantil y la flexibilidad laboral**, permitiendo la generaciÃ³n de horarios compactos que minimicen tiempos muertos y faciliten la inserciÃ³n de los estudiantes en actividades preprofesionales.
 
 ---
 
-## 🏗️ 2. Arquitectura del Sistema y Stack MERN
+## ðŸ—ï¸ 2. Arquitectura del Sistema
 
-El proyecto sigue una arquitectura Cliente-Servidor desacoplada utilizando el stack MERN.
+El proyecto sigue una arquitectura Cliente-Servidor desacoplada con **React** en frontend, **Node.js + Express** en backend y **PostgreSQL** como base de datos objetivo, manteniendo ademÃ¡s fallback local para continuidad acadÃ©mica.
 
 ### Estructura del Repositorio
 ```text
 Smarts_Uc/
   smartsched-uc/
     client/   # Frontend (React)
-    server/   # Backend (Node.js + Express + MongoDB/Mongoose)
-    docs/     # Especificación formal SDD y artefactos
+    server/   # Backend (Node.js + Express + PostgreSQL / fallback local)
+    docs/     # EspecificaciÃ³n formal SDD y artefactos
+```
 
+## DocumentaciÃ³n vigente de cierre
 
----
+- Ãndice de cierre: [`docs/cierre/00_indice_cierre.md`](./docs/cierre/00_indice_cierre.md)
+- Informe final: [`docs/cierre/01_informe_final_proyecto.md`](./docs/cierre/01_informe_final_proyecto.md)
+- Trazabilidad: [`docs/cierre/11_matriz_trazabilidad.md`](./docs/cierre/11_matriz_trazabilidad.md)
+- Evidencias: [`docs/cierre/evidencias/README.md`](./docs/cierre/evidencias/README.md)
 
-## 🌱 Desarrollo web responsable y Green MERN
+> Nota: este README conserva contenido histÃ³rico. Para la sustentaciÃ³n tÃ©cnica actual, usar como referencia principal la carpeta `docs/cierre/` y la aplicaciÃ³n vigente en `smartsched-uc/`.
 
-Como parte de la actualización del proyecto, SmartSched-UC incorpora un análisis de desarrollo web responsable orientado a reducir el impacto ambiental del software y mejorar la eficiencia del sistema.
+- Manifiesto de evidencias: [docs/cierre/evidencias/00_manifiesto_evidencias.md](./docs/cierre/evidencias/00_manifiesto_evidencias.md)
+- Validación de evidencias: [docs/cierre/evidencias/99_validacion_evidencias.md](./docs/cierre/evidencias/99_validacion_evidencias.md)
 
-Las mejoras consideradas incluyen:
-
-- análisis del impacto ambiental del desarrollo, despliegue y uso de aplicaciones web;
-- identificación de oportunidades de optimización en frontend, backend, base de datos y APIs;
-- uso de compresión HTTP en Express;
-- paginación opcional en endpoints académicos;
-- optimización de consultas MongoDB mediante selección de campos y uso de `.lean()`;
-- caché temporal para reducir solicitudes repetidas;
-- reducción del tamaño de respuestas JSON;
-- documentación de evidencias antes/después mediante Lighthouse, DevTools o herramientas equivalentes.
-
-Documento relacionado:
-
-```text
-docs/22_desarrollo_web_responsable_green_mern.md

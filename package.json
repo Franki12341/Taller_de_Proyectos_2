@@ -1,0 +1,43 @@
+{
+  "name": "taller_de_proyectos_2-git",
+  "version": "1.0.0",
+  "description": "**Universidad Continental - Proyecto de Fin de Asignatura (PFA)**\r **Periodo Académico:** 202610\r **Desarrollado por:** Helen Sayumi Castro Arteaga",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "npm --prefix smartsched-uc/server test",
+    "test:client": "npm --prefix smartsched-uc/client test -- --watchAll=false",
+    "test:coverage:server": "npm --prefix smartsched-uc/server run test:coverage",
+    "test:coverage:client": "npm --prefix smartsched-uc/client run test:coverage",
+    "test:coverage": "npm run test:coverage:server && npm run test:coverage:client",
+    "build": "npm --prefix smartsched-uc/client run build",
+    "quality:server": "npm run test:server",
+    "quality:client": "npm run test:client",
+    "quality:build": "npm run build",
+    "quality:check": "npm test",
+    "quality:full": "npm run quality:check && npm run build",
+    "commitlint": "commitlint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Franki12341/Taller_de_Proyectos_2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Franki12341/Taller_de_Proyectos_2/issues"
+  },
+  "homepage": "https://github.com/Franki12341/Taller_de_Proyectos_2#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "husky": "^9.1.7",
+    "playwright": "^1.61.1"
+  }
+}

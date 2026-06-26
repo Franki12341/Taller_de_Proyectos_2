@@ -627,3 +627,17 @@ El análisis permitió identificar que los conflictos de horario, la disponibili
 Por ello, SmartSched-UC se justifica como una solución basada en CSP y optimización combinatoria, ya que permite modelar formalmente variables, dominios y restricciones. Además, la incorporación de indicadores medibles, una GUI orientada a la validación, un proceso CRUD y un MVP actualizado permite evidenciar que el proyecto no solo responde a una necesidad técnica, sino también a una problemática real del entorno académico.
 
 Finalmente, la documentación versionada, el uso de GitHub, la actualización del TOC, la implementación de pruebas y la trazabilidad entre análisis, requerimientos y MVP fortalecen el proyecto y demuestran buenas prácticas de ingeniería de software.
+
+## Estado del artefacto
+
+Este archivo se recrea únicamente para **restablecer trazabilidad documental** desde [`00_TOC.md`](./00_TOC.md), ya que el historial Git evidencia referencias previas a este documento, pero el contenido completo no está presente en el árbol actual del repositorio.
+
+## Referencias verificables
+
+- Commit de creación mencionado en historial: `41b23e0`
+- Actualización posterior mencionada en historial: `f471c26`
+- Documento de cierre relacionado: [`cierre/01_informe_final_proyecto.md`](./cierre/01_informe_final_proyecto.md)
+
+## Acción recomendada
+
+Recuperar el contenido histórico exacto desde Git si se requiere como insumo formal de la entrega final.
