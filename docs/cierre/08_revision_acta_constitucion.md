@@ -1,4 +1,4 @@
-﻿# RevisiÃ³n del acta de constituciÃ³n SmartSched-UC
+﻿# Revision del acta de constitucion SmartSched-UC
 
 ## PropÃ³sito
 
@@ -10,7 +10,7 @@ Evaluar el grado de cumplimiento de los objetivos planteados en los documentos f
 - [`../14_constitution.md`](../14_constitution.md)
 - [`../../smartsched-uc/docs/SPEC.md`](../../smartsched-uc/docs/SPEC.md)
 
-## RevisiÃ³n ejecutiva
+## Revision ejecutiva
 
 Se verificÃ³ cumplimiento funcional del nÃºcleo del proyecto, pero tambiÃ©n se detectÃ³ desalineaciÃ³n documental histÃ³rica respecto del stack y algunas restricciones iniciales, por ejemplo rangos de crÃ©ditos histÃ³ricos distintos al lÃ­mite tÃ©cnico actual de 25 crÃ©ditos.
 
@@ -24,7 +24,7 @@ Se verificÃ³ cumplimiento funcional del nÃºcleo del proyecto, pero tambiÃ©
 | Proveer interfaz web usable | Interfaz funcional de matrÃ­cula y coordinaciÃ³n | NavegaciÃ³n, resumen y modo demostraciÃ³n | Verificado | Cumplido | `client/src/App.js`, `client/src/App.test.js` |
 | Sustentar calidad del producto | Pruebas, calidad y documentaciÃ³n | Evidencia verificable de calidad | Parcialmente verificado | Parcialmente cumplido | `EV-TEST-*`, `3804bdd`, ausencia de reporte Sonar exportado |
 
-## EvaluaciÃ³n por criterio
+## Evaluacion por criterio
 
 | Criterio fundacional | Resultado | JustificaciÃ³n |
 |---|---|---|
@@ -37,7 +37,7 @@ Se verificÃ³ cumplimiento funcional del nÃºcleo del proyecto, pero tambiÃ©
 | Restricciones | Parcialmente cumplido | El lÃ­mite de crÃ©ditos cambiÃ³ y debe quedar explicitado como evoluciÃ³n controlada. |
 | Entregables | Cumplido | CÃ³digo, documentaciÃ³n, pruebas y evidencias existen. |
 
-## DecisiÃ³n de cierre
+## Decision de cierre
 
 **Cierre acadÃ©mico tÃ©cnicamente viable**, con observaciones documentales y de evidencia manual pendientes antes de una sustentaciÃ³n definitiva.
 
