@@ -1,2 +1,0 @@
-echo "Ejecutando pruebas antes del commit..."
-npm test

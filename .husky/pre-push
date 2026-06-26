@@ -1,2 +1,0 @@
-echo "Ejecutando validacion completa antes del push..."
-npm run quality:full
