@@ -1,16 +1,16 @@
-﻿# Ãndice de cierre SmartSched-UC
+﻿# Indice de cierre SmartSched-UC
 
-## PropÃ³sito
+## Proposito
 
-Centralizar la documentaciÃ³n de **control y cierre** del proyecto **SmartSched-UC** con base en evidencia verificable del repositorio, el cÃ³digo, las pruebas automatizadas, los artefactos histÃ³ricos y el estado actual del sistema en `smartsched-uc/`.
+Centralizar la documentacion de **control y cierre** del proyecto **SmartSched-UC** con base en evidencia verificable del repositorio, el codigo, las pruebas automatizadas, los artefactos historicos y el estado actual del sistema en `smartsched-uc/`.
 
 ## Alcance
 
 - Consolidar el cierre documental del proyecto acadÃ©mico.
-- Relacionar requerimientos, cÃ³digo, pruebas, riesgos, incidentes, defectos, cambios y evidencias.
-- Identificar vacÃ­os de informaciÃ³n que todavÃ­a requieren validaciÃ³n humana o evidencias manuales.
+- Relacionar requerimientos, codigo, pruebas, riesgos, incidentes, defectos, cambios y evidencias.
+- Identificar vacios de informacion que todavi­a requieren validacion humana o evidencias manuales.
 
-## ConvenciÃ³n de cÃ³digos
+## Convencion de codigos
 
 - Requerimientos funcionales: `RF-XX`
 - Requerimientos no funcionales: `RNF-XX`
@@ -26,26 +26,26 @@ Centralizar la documentaciÃ³n de **control y cierre** del proyecto **SmartSche
 
 ## ConvenciÃ³n de evidencias
 
-- `EV-APP`: evidencia funcional de la aplicaciÃ³n.
+- `EV-APP`: evidencia funcional de la aplicacion.
 - `EV-DB`: evidencia de base de datos PostgreSQL y fallback.
 - `EV-TEST`: evidencia de pruebas automatizadas y cobertura.
-- `EV-SONAR`: evidencia de anÃ¡lisis estÃ¡tico/sonar.
+- `EV-SONAR`: evidencia de analisis estatico/sonar.
 - `EV-SEC`: evidencia de seguridad, auditorÃ­as y hallazgos.
 - `EV-GIT`: evidencia de Git, ramas, historial y configuraciÃ³n.
-- `EV-GEST`: evidencia de gestiÃ³n, trazabilidad y cierre.
+- `EV-GEST`: evidencia de gestion, trazabilidad y cierre.
 
 ## Leyenda de estados
 
 - **Completado**: documento creado y consistente con la evidencia disponible.
-- **En validaciÃ³n**: documento creado, pero con campos que requieren contraste o captura manual.
-- **Pendiente**: documento aÃºn no consolidado.
+- **En validacion**: documento creado, pero con campos que requieren contraste o captura manual.
+- **Pendiente**: documento aun no consolidado.
 - **No aplica**: el criterio no corresponde al alcance actual del MVP.
 
 ## Documentos de cierre
 
 | CÃ³digo | Documento | Estado | Responsable | Ãšltima actualizaciÃ³n | Enlace |
 |---|---|---|---|---|---|
-| DOC-CIERRE-00 | Ãndice de cierre | Completado | [PENDIENTE: confirmar responsable documental en acta o portada oficial] | 2026-06-25 | [`00_indice_cierre.md`](./00_indice_cierre.md) |
+| DOC-CIERRE-00 | Indice de cierre | Completado | [PENDIENTE: confirmar responsable documental en acta o portada oficial] | 2026-06-25 | [`00_indice_cierre.md`](./00_indice_cierre.md) |
 | DOC-CIERRE-01 | Informe final del proyecto | En validaciÃ³n | [PENDIENTE: confirmar responsable documental en acta o portada oficial] | 2026-06-25 | [`01_informe_final_proyecto.md`](./01_informe_final_proyecto.md) |
 | DOC-CIERRE-02 | Lecciones aprendidas | Completado | [PENDIENTE: confirmar responsable documental en acta o portada oficial] | 2026-06-25 | [`02_lecciones_aprendidas.md`](./02_lecciones_aprendidas.md) |
 | DOC-CIERRE-03 | Registro de riesgos | Completado | [PENDIENTE: confirmar responsable de gestiÃ³n de riesgos] | 2026-06-25 | [`03_registro_riesgos.md`](./03_registro_riesgos.md) |
@@ -53,35 +53,35 @@ Centralizar la documentaciÃ³n de **control y cierre** del proyecto **SmartSche
 | DOC-CIERRE-05 | Registro de impedimentos | Completado | [PENDIENTE: confirmar responsable de seguimiento de impedimentos] | 2026-06-25 | [`05_registro_impedimentos.md`](./05_registro_impedimentos.md) |
 | DOC-CIERRE-06 | Registro de defectos | Completado | [PENDIENTE: confirmar responsable de control de defectos] | 2026-06-25 | [`06_registro_defectos.md`](./06_registro_defectos.md) |
 | DOC-CIERRE-07 | Registro de supuestos | Completado | [PENDIENTE: confirmar responsable de validaciÃ³n de supuestos] | 2026-06-25 | [`07_registro_supuestos.md`](./07_registro_supuestos.md) |
-| DOC-CIERRE-08 | RevisiÃ³n del acta de constituciÃ³n | En validaciÃ³n | [PENDIENTE: confirmar responsable de revisiÃ³n del acta] | 2026-06-25 | [`08_revision_acta_constitucion.md`](./08_revision_acta_constitucion.md) |
+| DOC-CIERRE-08 | Revision del acta de constituciÃ³n | En validaciÃ³n | [PENDIENTE: confirmar responsable de revisiÃ³n del acta] | 2026-06-25 | [`08_revision_acta_constitucion.md`](./08_revision_acta_constitucion.md) |
 | DOC-CIERRE-09 | DeclaraciÃ³n de trabajo SOW | En validaciÃ³n | [PENDIENTE: confirmar responsable de validaciÃ³n acadÃ©mica del SOW] | 2026-06-25 | [`09_declaracion_trabajo_sow.md`](./09_declaracion_trabajo_sow.md) |
 | DOC-CIERRE-10 | Manual de capacitaciÃ³n | En validaciÃ³n | [PENDIENTE: confirmar responsable de capacitaciÃ³n o entrega] | 2026-06-25 | [`10_manual_capacitacion.md`](./10_manual_capacitacion.md) |
 | DOC-CIERRE-11 | Matriz de trazabilidad | Completado | [PENDIENTE: confirmar responsable de trazabilidad] | 2026-06-25 | [`11_matriz_trazabilidad.md`](./11_matriz_trazabilidad.md) |
 | DOC-CIERRE-12 | Control de configuraciÃ³n y cambios | Completado | [PENDIENTE: confirmar responsable de configuraciÃ³n] | 2026-06-25 | [`12_control_configuracion_cambios.md`](./12_control_configuracion_cambios.md) |
 | DOC-CIERRE-13 | Impacto y sostenibilidad | En validaciÃ³n | [PENDIENTE: confirmar responsable del anÃ¡lisis de sostenibilidad] | 2026-06-25 | [`13_impacto_sostenibilidad.md`](./13_impacto_sostenibilidad.md) |
-| DOC-CIERRE-14 | EvaluaciÃ³n de competencias | En validaciÃ³n | [PENDIENTE: confirmar responsable acadÃ©mico de competencias] | 2026-06-25 | [`14_evaluacion_competencias.md`](./14_evaluacion_competencias.md) |
+| DOC-CIERRE-14 | Evaluacion de competencias | En validaciÃ³n | [PENDIENTE: confirmar responsable acadÃ©mico de competencias] | 2026-06-25 | [`14_evaluacion_competencias.md`](./14_evaluacion_competencias.md) |
 | DOC-CIERRE-15 | Lista de verificaciÃ³n de cierre | Completado | [PENDIENTE: confirmar responsable del checklist de cierre] | 2026-06-25 | [`15_lista_verificacion_cierre.md`](./15_lista_verificacion_cierre.md) |
-| DOC-CIERRE-EV | Ãndice de evidencias | Completado | [PENDIENTE: confirmar custodio de evidencias] | 2026-06-25 | [`evidencias/README.md`](./evidencias/README.md) |
+| DOC-CIERRE-EV | Indice de evidencias | Completado | [PENDIENTE: confirmar custodio de evidencias] | 2026-06-25 | [`evidencias/README.md`](./evidencias/README.md) |
 
 ## Documentos relacionados
 
-- TOC histÃ³rico del proyecto: [`../00_TOC.md`](../00_TOC.md)
-- Acta/charter histÃ³rico: [`../03_project_charter.md`](../03_project_charter.md)
-- Requerimientos histÃ³ricos: [`../05_requerimientos.md`](../05_requerimientos.md)
-- Riesgos histÃ³ricos: [`../17_riesgos.md`](../17_riesgos.md)
-- EspecificaciÃ³n tÃ©cnica del sistema: [`../../smartsched-uc/docs/SPEC.md`](../../smartsched-uc/docs/SPEC.md)
-- README tÃ©cnico de la aplicaciÃ³n: [`../../smartsched-uc/README.md`](../../smartsched-uc/README.md)
+- TOC historico del proyecto: [`../00_TOC.md`](../00_TOC.md)
+- Acta/charter historico: [`../03_project_charter.md`](../03_project_charter.md)
+- Requerimientos historicos: [`../05_requerimientos.md`](../05_requerimientos.md)
+- Riesgos historicos: [`../17_riesgos.md`](../17_riesgos.md)
+- Especificacion tecnica del sistema: [`../../smartsched-uc/docs/SPEC.md`](../../smartsched-uc/docs/SPEC.md)
+- README tecnico de la aplicacion: [`../../smartsched-uc/README.md`](../../smartsched-uc/README.md)
 
 ## Checklist general de consolidaciÃ³n
 
 | Criterio | Estado | ObservaciÃ³n |
 |---|---|---|
-| Ãndice de cierre creado | Completado | Este documento centraliza la fase de cierre. |
+| Indice de cierre creado | Completado | Este documento centraliza la fase de cierre. |
 | Registros de control enlazados | Completado | Riesgos, incidentes, impedimentos, defectos y supuestos enlazados. |
 | Evidencias existentes referenciadas | Completado | Se reutilizan `EV-GIT`, `EV-SEC` y `EV-TEST`. |
-| Costos con dato real confirmados | En validaciÃ³n | No se encontrÃ³ trazabilidad suficiente de horas reales y montos. |
-| SonarQube con reporte ejecutado | En validaciÃ³n | Se encontrÃ³ configuraciÃ³n y commit, no reporte exportado. |
-| WCAG con auditorÃ­a formal | En validaciÃ³n | Se verificaron seÃ±ales de accesibilidad bÃ¡sica, no auditorÃ­a formal. |
+| Costos con dato real confirmados | En validacion | No se encontro trazabilidad suficiente de horas reales y montos. |
+| SonarQube con reporte ejecutado | En validacion | Se encontro configuracion y commit, no reporte exportado. |
+| WCAG con auditoria formal | En validacion | Se verificaron señales de accesibilidad basica, no auditori­a formal. |
 | Riesgos residuales documentados | Completado | Ver [`03_registro_riesgos.md`](./03_registro_riesgos.md). |
 | Trazabilidad extremo a extremo | Completado | Ver [`11_matriz_trazabilidad.md`](./11_matriz_trazabilidad.md). |
 
