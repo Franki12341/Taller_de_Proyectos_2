@@ -4,12 +4,12 @@
 
 - Probabilidad: `1` a `5`
 - Impacto: `1` a `5`
-- ExposiciÃ³n = `Probabilidad Ã— Impacto`
+- ExposiciÃ³n = `Probabilidad — Impacto`
 - Prioridad:
-  - `1â€“4`: Bajo
-  - `5â€“9`: Medio
-  - `10â€“16`: Alto
-  - `17â€“25`: CrÃ­tico
+  - `1 - 4`: Bajo
+  - `5 - 9`: Medio
+  - `10 - 16`: Alto
+  - `17 - 25`: CrÃ­tico
 
 ## Registro
 
