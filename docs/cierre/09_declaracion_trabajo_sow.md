@@ -32,7 +32,7 @@ El proyecto SmartSched-UC desarrolla un sistema web de simulaciÃ³n y generaci�
 | Soporte PostgreSQL/fallback | `/api/health` y capa de datos dual operativa | Verificado | Completado | `db.js`, `academic-data.service.js` |
 | Pruebas automatizadas | Suites backend/frontend disponibles | Verificado | Completado | `EV-TEST-01` a `EV-TEST-04` |
 | Evidencias de seguridad/calidad | AuditorÃ­as y configuraciÃ³n disponibles | Parcial | En validaciÃ³n | `EV-SEC-*`, `sonar-project.properties` |
-| DocumentaciÃ³n de cierre | Registros y trazabilidad consolidados | Verificado | Completado | carpeta `docs/cierre/` |
+| Documentacion de cierre | Registros y trazabilidad consolidados | Verificado | Completado | carpeta `docs/cierre/` |
 
 ## Responsabilidades
 
