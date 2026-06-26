@@ -24,7 +24,7 @@ Centralizar la documentacion de **control y cierre** del proyecto **SmartSched-U
 - Evidencias: `EV-XXX-XX`
 - Pruebas: `PRB-XX`
 
-## ConvenciÃ³n de evidencias
+## Convencion de evidencias
 
 - `EV-APP`: evidencia funcional de la aplicacion.
 - `EV-DB`: evidencia de base de datos PostgreSQL y fallback.
