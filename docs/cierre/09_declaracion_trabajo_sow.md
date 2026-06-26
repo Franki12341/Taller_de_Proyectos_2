@@ -10,22 +10,22 @@ El proyecto SmartSched-UC desarrolla un sistema web de simulaciÃ³n y generaci�
 
 ## Alcance
 
-- SelecciÃ³n de cursos y simulaciÃ³n de matrÃ­cula.
-- GeneraciÃ³n y validaciÃ³n de horarios.
-- IntegraciÃ³n con PostgreSQL y fallback local.
-- AuditorÃ­a, notificaciones, coordinaciÃ³n y modo demostraciÃ³n.
-- Pruebas automatizadas y documentaciÃ³n tÃ©cnica.
+- Seleccion de cursos y simulacion de matrÃ­cula.
+- Generacion y validacion de horarios.
+- Integracion con PostgreSQL y fallback local.
+- Auditori­a, notificaciones, coordinacion y modo demostracion.
+- Pruebas automatizadas y documentacion tecnica.
 
 ## Exclusiones
 
-- MatrÃ­cula institucional real.
-- IntegraciÃ³n productiva con ERP universitario.
-- AutenticaciÃ³n productiva multiusuario.
-- CÃ¡lculo econÃ³mico real certificado.
+- Matricula institucional real.
+- Integracion productiva con ERP universitario.
+- Autenticacion productiva multiusuario.
+- Calculo economico real certificado.
 
 ## Entregables y aceptaciÃ³n
 
-| Entregable | Criterio de aceptaciÃ³n | Resultado | Estado | Evidencia |
+| Entregable | Criterio de aceptacion | Resultado | Estado | Evidencia |
 |---|---|---|---|---|
 | Frontend de simulaciÃ³n | Permite seleccionar cursos, generar horario y revisar resumen | Verificado | Completado | `client/src/App.js`, `client/src/App.test.js` |
 | Backend de horarios | Expone endpoints y motor de validaciÃ³n | Verificado | Completado | `server/src/routes/academic.routes.js`, `scheduler.service.js` |
@@ -37,29 +37,29 @@ El proyecto SmartSched-UC desarrolla un sistema web de simulaciÃ³n y generaci�
 ## Responsabilidades
 
 - Equipo del proyecto: implementar, documentar y validar el MVP.
-- Responsable documental: consolidar el cierre y declarar vacÃ­os de evidencia.
-- Docente/evaluador: revisar cumplimiento acadÃ©mico contra la rÃºbrica.
+- Responsable documental: consolidar el cierre y declarar vacÃios de evidencia.
+- Docente/evaluador: revisar cumplimiento academico contra la rubrica.
 
 ## Restricciones
 
-- No inventar mÃ©tricas, costos, fechas ni evidencias.
+- No inventar metricas, costos, fechas ni evidencias.
 - No reescribir la historia del proyecto.
 - Mantener coherencia con el cÃ³digo verificable del repositorio.
 
-## ValidaciÃ³n final
+## Validacion final
 
-La validaciÃ³n final debe complementarse con:
+La validacion final debe complementarse con:
 
-1. revisiÃ³n manual del docente;
-2. confirmaciÃ³n de responsables y fechas;
+1. revision manual del docente;
+2. confirmacion de responsables y fechas;
 3. capturas y evidencias manuales faltantes;
-4. decisiÃ³n acadÃ©mica de aceptaciÃ³n.
+4. decision academica de aceptacion.
 
 ## Pendientes
 
 - Completar responsables y fechas reales.
 - Adjuntar evidencia SonarQube/WCAG si se ejecuta posteriormente.
-- Corregir inconsistencias histÃ³ricas en documentos raÃ­z.
+- Corregir inconsistencias historicas en documentos rai­z.
 
 ## Evidencias relacionadas
 
