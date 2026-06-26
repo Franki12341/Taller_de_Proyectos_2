@@ -72,7 +72,7 @@ Las pruebas Jest se escribieron para cubrir:
 
 - RED: deteccion de conflictos de docente y aula.
 - GREEN: generacion valida con restricciones completas.
-- REFACTOR: separacion del motor puro, controladores Express y modelos MongoDB.
+- REFACTOR: separación del motor puro, controladores Express y capa de datos preparada para PostgreSQL.
 
 Comando: `cd server && npm.cmd test`.
 

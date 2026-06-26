@@ -1,0 +1,28 @@
+﻿# Registro de defectos SmartSched-UC
+
+## Criterio
+
+Se registran defectos verificables en cÃ³digo, configuraciÃ³n o documentaciÃ³n del repositorio.
+
+## Registro
+
+| ID | Fecha | MÃ³dulo | DescripciÃ³n | Tipo | Severidad | Pasos para reproducir | Resultado esperado | Resultado obtenido | Causa | CorrecciÃ³n | Prueba de validaciÃ³n | Estado | Evidencia | Commit |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| DEF-01 | 2026-06-25 | `docs/00_TOC.md` | El TOC referenciaba documentos 20 y 21 no presentes en el Ã¡rbol actual al momento de la revisiÃ³n. | Documental | Alta | Abrir `docs/00_TOC.md` y buscar filas 20 y 21. | Todos los enlaces deben resolver a archivos existentes. | Los enlaces requerÃ­an restauraciÃ³n documental. | ReorganizaciÃ³n documental incompleta. | Restablecer los artefactos y documentar su carÃ¡cter de recuperaciÃ³n trazable. | RevisiÃ³n manual del TOC y de los archivos recreados | En control | `docs/00_TOC.md`, `INC-01` | `[PENDIENTE: registrar commit de cierre cuando se versionen los archivos restaurados]` |
+| DEF-02 | 2026-06-25 | `docs/08_arquitectura.md` | La arquitectura histÃ³rica mencionaba FastAPI y MERN, aunque el sistema actual usa React, Node.js, Express y PostgreSQL. | Documental | Alta | Revisar `docs/08_arquitectura.md` y compararlo con `server/package.json` y `client/package.json`. | La arquitectura documental debe coincidir con el cÃ³digo vigente. | Se detectÃ³ una inconsistencia documental durante la revisiÃ³n. | EvoluciÃ³n del proyecto sin actualizaciÃ³n completa del documento histÃ³rico. | Corregir el Ã¡rbol actual y dejar constancia del desalineamiento histÃ³rico. | RevisiÃ³n cruzada documental | En control | `docs/08_arquitectura.md`, `smartsched-uc/server/package.json` | `[PENDIENTE: identificar commit exacto de introducciÃ³n de la referencia obsoleta]` |
+| DEF-03 | 2026-06-18 | `smartsched-uc/sonar-project.properties` | Archivo contiene token SonarQube visible en texto plano. | Seguridad/configuraciÃ³n | CrÃ­tica | Abrir `smartsched-uc/sonar-project.properties`. | Los secretos deben estar fuera del repositorio. | Se observa token en claro. | GestiÃ³n insegura de secretos. | Rotar el token y migrarlo a variables seguras. | VerificaciÃ³n manual posterior a la rotaciÃ³n | Abierto | `smartsched-uc/sonar-project.properties`, `RSK-03` | `3804bdd` |
+| DEF-04 | 2026-06-25 | `smartsched-uc/server/package.json` | La descripciÃ³n del backend decÃ­a â€œAPI MERNâ€ durante la revisiÃ³n de cierre. | Metadatos | Media | Abrir `server/package.json`. | La descripciÃ³n debe reflejar el stack actual. | El metadato estaba desactualizado. | Ajuste incompleto de identidad tÃ©cnica. | Corregir metadato para reflejar Express y PostgreSQL. | RevisiÃ³n manual de `package.json` | En control | `smartsched-uc/server/package.json`, `INC-02` | `[PENDIENTE: registrar commit cuando se versione la correcciÃ³n de metadato]` |
+| DEF-05 | 2026-06-25 | `README.md` y docs raÃ­z | Existen caracteres corruptos o mojibake en archivos Markdown. | Documental | Media | Abrir `README.md` o `docs/00_TOC.md` en consola o editor. | El texto debe verse con codificaciÃ³n uniforme UTF-8. | Se observan caracteres daÃ±ados. | Problemas histÃ³ricos de codificaciÃ³n o BOM. | Normalizar codificaciÃ³n preservando historial. | ValidaciÃ³n visual en editor UTF-8 | Abierto | `README.md`, `docs/00_TOC.md`, `INC-04` | `[PENDIENTE: identificar commit exacto de introducciÃ³n del problema de codificaciÃ³n]` |
+| DEF-SEC-01 | 2026-06-25 | `smartsched-uc/server/package-lock.json` | La auditorÃ­a backend reporta 22 vulnerabilidades. | Seguridad/dependencias | Alta | Ejecutar `npm --prefix smartsched-uc/server audit --audit-level=moderate`. | El backend deberÃ­a reducir o justificar vulnerabilidades abiertas. | Persisten 22 hallazgos (`1 low`, `20 moderate`, `1 high`). | Dependencias directas y transitivas pendientes de actualizaciÃ³n controlada. | Planificar saneamiento gradual con pruebas antes y despuÃ©s. | Volver a ejecutar `npm audit` tras las actualizaciones controladas | Abierto | [EV-SEC-02](./evidencias/calidad/EV-SEC-02-audit-backend.txt) | `[PENDIENTE: registrar commit de remediaciÃ³n cuando exista]` |
+| DEF-SEC-02 | 2026-06-25 | `smartsched-uc/client/package-lock.json` | La auditorÃ­a frontend reporta 51 vulnerabilidades, incluida una crÃ­tica. | Seguridad/dependencias | CrÃ­tica | Ejecutar `npm --prefix smartsched-uc/client audit --audit-level=moderate`. | El frontend deberÃ­a reducir o justificar vulnerabilidades abiertas. | Persisten 51 hallazgos (`5 low`, `30 moderate`, `15 high`, `1 critical`). | Dependencias directas y transitivas obsoletas, varias asociadas a `react-scripts`. | Planificar actualizaciÃ³n controlada, separando impacto de desarrollo y producciÃ³n. | Volver a ejecutar `npm audit` y `npm run build` tras la remediaciÃ³n controlada | Abierto | [EV-SEC-03](./evidencias/calidad/EV-SEC-03-audit-frontend.txt) | `[PENDIENTE: registrar commit de remediaciÃ³n cuando exista]` |
+
+## Trazabilidad
+
+- Incidentes relacionados: [`04_registro_incidentes.md`](./04_registro_incidentes.md)
+- Riesgos relacionados: [`03_registro_riesgos.md`](./03_registro_riesgos.md)
+
+## Evidencias relacionadas
+
+- Hallazgos de seguridad abiertos: [`evidencias/calidad/EV-SEC-02-audit-backend.txt`](./evidencias/calidad/EV-SEC-02-audit-backend.txt), [`evidencias/calidad/EV-SEC-03-audit-frontend.txt`](./evidencias/calidad/EV-SEC-03-audit-frontend.txt)
+- Evidencia funcional de conflicto y aforo: [`evidencias/aplicacion/EV-APP-06-conflicto-horario.md`](./evidencias/aplicacion/EV-APP-06-conflicto-horario.md), [`evidencias/aplicacion/EV-APP-07-capacidad-aula.md`](./evidencias/aplicacion/EV-APP-07-capacidad-aula.md)
+

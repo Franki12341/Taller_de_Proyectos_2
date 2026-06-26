@@ -1,0 +1,7 @@
+﻿  ci/quality-standards
+* docs/control-cierre
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/ci/quality-standards
+  remotes/origin/main
+  remotes/origin/master

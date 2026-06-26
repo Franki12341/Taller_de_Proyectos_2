@@ -11,7 +11,7 @@ El sistema SmartSched-UC utiliza una arquitectura basada en el modelo SPA (Singl
 ## 🔗 Componentes Tecnológicos
 
 - **Frontend:** React  
-- **Backend:** FastAPI  
+- **Backend:** Node.js + Express  
 - **Base de Datos:** PostgreSQL  
 - **Motor de Optimización:** CSP  
 
@@ -31,6 +31,6 @@ La comunicación entre ambos se realiza mediante una API REST, permitiendo desac
 ```mermaid
 flowchart TD
 Usuario --> React
-React --> FastAPI
-FastAPI --> CSP
+React --> Express
+Express --> CSP
 CSP --> PostgreSQL

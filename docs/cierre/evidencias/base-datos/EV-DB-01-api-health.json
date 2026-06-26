@@ -1,0 +1,13 @@
+﻿{
+    "status":  "ok",
+    "database":  "postgresql",
+    "postgresEnabled":  true,
+    "usingFallback":  false,
+    "counts":  {
+                   "courses":  20,
+                   "teachers":  16,
+                   "classrooms":  14,
+                   "students":  60
+               },
+    "lastCheckedAt":  "2026-06-25T23:53:52.800Z"
+}

@@ -1,0 +1,1 @@
+﻿Scanner no ejecutado: SONAR_TOKEN no definido en el entorno.

@@ -1,0 +1,15 @@
+﻿M README.md
+ M docs/00_TOC.md
+ M docs/08_arquitectura.md
+ M package-lock.json
+ M package.json
+ M smartsched-uc/docs/SPEC.md
+ M smartsched-uc/server/package.json
+ M smartsched-uc/sonar-project.properties
+?? docs/20_analisis_validacion_problema.md
+?? docs/21_evidencias_validacion_tdd_mvp.md
+?? docs/cierre/
+?? e2e/
+?? scripts/
+origin	https://github.com/Franki12341/Taller_de_Proyectos_2.git (fetch)
+origin	https://github.com/Franki12341/Taller_de_Proyectos_2.git (push)

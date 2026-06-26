@@ -1,0 +1,161 @@
+﻿Tablas y columnas detectadas:
+{
+  "audit_logs": [
+    "id",
+    "action",
+    "entity",
+    "description",
+    "user_role",
+    "source",
+    "metadata",
+    "created_at"
+  ],
+  "classrooms": [
+    "id",
+    "code",
+    "name",
+    "classroom_type",
+    "capacity",
+    "status",
+    "created_at",
+    "type",
+    "campus",
+    "usage_percent"
+  ],
+  "constraints": [
+    "id",
+    "code",
+    "name",
+    "constraint_type",
+    "description",
+    "active",
+    "payload_json",
+    "severity"
+  ],
+  "course_teacher": [
+    "id",
+    "course_id",
+    "teacher_id",
+    "course_code",
+    "teacher_code"
+  ],
+  "courses": [
+    "id",
+    "code",
+    "name",
+    "credits",
+    "course_type",
+    "required_hours",
+    "estimated_students",
+    "requires_lab",
+    "created_at",
+    "required_classroom_type",
+    "type"
+  ],
+  "schedule_items": [
+    "id",
+    "schedule_id",
+    "course_code",
+    "course_name",
+    "teacher_code",
+    "teacher_name",
+    "classroom_code",
+    "classroom_name",
+    "day",
+    "start_time",
+    "end_time",
+    "credits",
+    "occupancy_rate",
+    "time_block_day",
+    "time_block_type",
+    "duration_hours"
+  ],
+  "schedules": [
+    "id",
+    "name",
+    "valid",
+    "summary",
+    "metrics",
+    "validation",
+    "teacher_load",
+    "infrastructure_usage",
+    "warnings",
+    "recommendations",
+    "created_at"
+  ],
+  "student_course_requests": [
+    "id",
+    "student_id",
+    "course_id",
+    "priority",
+    "status",
+    "created_at"
+  ],
+  "students": [
+    "id",
+    "code",
+    "first_name",
+    "last_name",
+    "cycle",
+    "email",
+    "has_internship",
+    "works",
+    "preferred_shift",
+    "max_credits",
+    "created_at"
+  ],
+  "teacher_availability": [
+    "id",
+    "teacher_id",
+    "time_block_id",
+    "available",
+    "teacher_code",
+    "time_block_code"
+  ],
+  "teacher_protected_blocks": [
+    "id",
+    "teacher_id",
+    "time_block_id",
+    "reason",
+    "teacher_code",
+    "time_block_code"
+  ],
+  "teachers": [
+    "id",
+    "code",
+    "name",
+    "contract_type",
+    "max_institutional_hours",
+    "current_academic_hours",
+    "administrative_hours",
+    "created_at",
+    "type",
+    "max_teaching_hours",
+    "specialties"
+  ],
+  "time_blocks": [
+    "id",
+    "day",
+    "start_time",
+    "end_time",
+    "shift",
+    "created_at",
+    "code",
+    "type",
+    "duration_hours",
+    "start_time_label",
+    "end_time_label",
+    "label"
+  ]
+}
+Cantidad de registros:
+{
+  "courses": 20,
+  "teachers": 16,
+  "classrooms": 14,
+  "time_blocks": 22,
+  "students": 60,
+  "student_course_requests": 300,
+  "constraints": 14
+}
+
