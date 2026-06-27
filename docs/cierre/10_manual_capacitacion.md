@@ -1038,36 +1038,6 @@ Después, corregir los caracteres dañados y guardar nuevamente.
 
 ---
 
-# E. Recomendaciones para la sustentación
-
-Antes de iniciar la exposición:
-
-1. encender PostgreSQL;
-2. iniciar SonarQube cuando se mostrarán sus métricas;
-3. iniciar el backend;
-4. iniciar el frontend;
-5. consultar `/api/health`;
-6. comprobar el modo de datos;
-7. realizar una generación de prueba;
-8. abrir las evidencias principales;
-9. cerrar aplicaciones innecesarias;
-10. mantener disponible el modo de demostración como respaldo.
-
-Durante la demostración se recomienda explicar:
-
-* el problema académico;
-* la arquitectura;
-* la selección de cursos;
-* el límite de 25 créditos;
-* el motor CSP/backtracking;
-* las validaciones;
-* PostgreSQL y fallback;
-* las pruebas;
-* la cobertura;
-* SonarQube;
-* los riesgos y mejoras futuras.
-
----
 
 # F. Evidencias de apoyo al manual
 
