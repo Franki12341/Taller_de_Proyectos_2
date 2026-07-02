@@ -34,8 +34,8 @@ El equipo responsable del análisis, diseño, desarrollo, pruebas, documentació
 
 <p align="center">
   <img
-    src="docs/assets/equipo-smartsched-uc.png"
-    alt="Integrantes del equipo de desarrollo de SmartSched-UC"
+    src="assets/equipo-smartsched-uc.png"
+    alt="Integrantes del equipo SmartSched-UC"
     width="650"
   />
 </p>
